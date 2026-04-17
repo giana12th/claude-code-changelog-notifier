@@ -6,17 +6,18 @@
 
 ### 1. Environmentを作成する
 
-`claude.ai/code` → Settings → Environments → New environment
+`claude.ai/code/routines` でRoutine作成フォームを開く → **Select an environment** ステップ → **Add environment**
+
+または、既存Routineの環境名をクリック → **Add environment**
 
 ```
 名前: anthropic-notifier
 ネットワーク: Custom
-  許可ドメイン:
-    code.claude.com
+  許可ドメイン（1行1ドメイン）:
     www.anthropic.com
     discord.com
-  "Also include default list" → オフ
-環境変数:
+  "Also include default list of common package managers" → オフ
+環境変数（.env形式、値をクォートで囲まない）:
   DISCORD_WEBHOOK_URL=https://discord.com/api/webhooks/xxxx/yyyy
 Setup script: （空でよい）
 ```
@@ -108,7 +109,7 @@ git push origin main
 
 ```
 □ Environmentのネットワーク設定が Custom になっている
-□ code.claude.com / www.anthropic.com / discord.com が許可されている
+□ www.anthropic.com / discord.com が許可されている
 □ DISCORD_WEBHOOK_URL が環境変数に入っている
 □ 4本すべて Allow unrestricted branch pushes がオン
 □ 4本すべて Connectors がすべて外れている
