@@ -24,6 +24,14 @@ Setup script: （空でよい）
 
 > Pythonは標準でインストール済みのため Setup script 不要。
 
+**Environmentが表示されないとき**  
+リポジトリにclaudeのGithub-appをインストールしてみる  
+https://github.com/apps/claude  
+
+ブラウザのキャッシュクリアしてリロードする(Ctrl+F5)  
+-> めちゃくちゃ画面変わって設定が出てきた   
+
+
 ### 2. stateファイルに初期値をセット
 
 リポジトリをローカルでcloneし、手動で直近の値を書き込む。
