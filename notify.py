@@ -59,12 +59,10 @@ def post(webhook_url: str, payload: dict) -> None:
     try:
         with urllib.request.urlopen(req, timeout=15) as resp:
             if resp.status not in (200, 204):
-                print(f"Discord HTTP {resp.status}", file=sys.stderr)
-                sys.exit(1)
+                raise RuntimeError(f"Discord HTTP {resp.status}")
     except urllib.error.HTTPError as e:
         body = e.read().decode("utf-8", errors="replace")
-        print(f"Discord error {e.code}: {body}", file=sys.stderr)
-        sys.exit(1)
+        raise RuntimeError(f"Discord error {e.code}: {body}")
 
 
 def main() -> None:
@@ -93,8 +91,12 @@ def main() -> None:
         print("Error: DISCORD_WEBHOOK_URL is not set", file=sys.stderr)
         sys.exit(1)
 
-    for chunk in chunks:
-        post(webhook_url, build_payload(chunk))
+    try:
+        for chunk in chunks:
+            post(webhook_url, build_payload(chunk))
+    except RuntimeError as e:
+        print(f"投稿に失敗しました。本セッションは終了してください。: {e}", file=sys.stderr)
+        sys.exit(0)
 
     print(f"Sent to Discord ({len(chunks)} message(s))")
 
