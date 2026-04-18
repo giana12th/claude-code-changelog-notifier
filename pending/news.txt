@@ -1,8 +1,0 @@
-📢 **Anthropic ニュース**
-**Claude Opus 4.7 リリース**
-AnthropicがClaudeシリーズ最新フラッグシップモデル「Claude Opus 4.7」の一般提供を開始した。コーディング能力が大幅に強化され、複雑な長時間タスクを高い精度で処理できるほか、ビジョン機能も先代の3倍以上となる最大約375万ピクセルの高解像度画像に対応する。料金はOpus 4.6と同じで、Claude製品・API・Amazon Bedrock・Google Cloud Vertex AI・Microsoft Foundryで利用可能。
-🔗 https://www.anthropic.com/news/claude-opus-4-7
-
-**Claude Design by Anthropic Labs 発表**
-Anthropic Labsが、Claudeと協力してデザイン・プロトタイプ・スライドなどの視覚的な作品を作成できる新ツール「Claude Design」を発表した。Claude Opus 4.7を基盤に、テキストプロンプトから初版デザインを自動生成し、インラインコメントや直接編集で反復改善が可能。Claude Pro・Max・Team・Enterpriseプランで利用できる。
-🔗 https://www.anthropic.com/news/claude-design-anthropic-labs
