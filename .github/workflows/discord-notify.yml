@@ -1,0 +1,56 @@
+name: Discord Notify
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'pending/**'
+  workflow_dispatch:
+
+concurrency:
+  group: discord-notify
+  cancel-in-progress: false
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Post pending files to Discord
+        env:
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+        run: |
+          shopt -s nullglob
+          failed=0
+          for f in pending/*.txt; do
+            echo "::group::Processing $f"
+            if python -X utf8 notify.py < "$f"; then
+              rm "$f"
+              echo "Sent and removed: $f"
+            else
+              echo "Failed: $f (kept for retry)"
+              failed=1
+            fi
+            echo "::endgroup::"
+          done
+          exit $failed
+
+      - name: Commit pending removals
+        if: always()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if [ -n "$(git status --porcelain pending/)" ]; then
+            git add pending/
+            git commit -m "chore: clear sent pending files"
+            git push
+          else
+            echo "No pending files to clear"
+          fi
