@@ -10,11 +10,13 @@ Anthropic Newsの新着記事を日本語要約してDiscordに投稿する。
 2. `https://www.anthropic.com/news` をフェッチして記事一覧を取得する
 3. 前回URLより新しい記事を特定する（ページ上部が最新）
 4. 新着記事それぞれの本文をフェッチする
-5. 下記フォーマットでDiscordに投稿する
-6. 最新記事のURLを `state/last_news.txt` に書き込む
-7. git commit & push する
+5. 下記フォーマットの投稿テキストを組み立てる
+6. `pending/news.txt` に投稿テキストを書き出す（既存ファイルがあれば追記）
+7. 最新記事のURLを `state/last_news.txt` に書き込む
+8. `pending/news.txt` と `state/last_news.txt` をまとめて git commit & push する
 
-新着がない場合はDiscordに投稿せず、stateも更新しない。
+新着がない場合は `pending/` にも `state/` にも何も書かず終了する。
+Discordへの実際の投稿は GitHub Actions（`.github/workflows/discord-notify.yml`）が push を検知して行う。
 
 ## 要約スタイル
 
@@ -47,19 +49,24 @@ Anthropic Newsの新着記事を日本語要約してDiscordに投稿する。
 🔗 （URL2）
 ```
 
-## notify.py の呼び出し
+## pending への書き出し
 
 ```bash
-python -X utf8 notify.py <<'EOF'
+# 既存の pending がある場合は追記する（前回Discord投稿が失敗して残っているケース）
+cat >> pending/news.txt <<'EOF'
 （投稿テキスト）
 EOF
 ```
+
+> `>>` で追記する点に注意（`>` で上書きすると前回未送信分が消える）。
 
 ## state更新とgit push
 
 ```bash
 echo "https://www.anthropic.com/news/..." > state/last_news.txt
-git add state/last_news.txt
-git commit -m "update state: last_news"
+git add pending/news.txt state/last_news.txt
+git commit -m "notify: news"
 git push origin main
 ```
+
+push 後は GitHub Actions が `pending/news.txt` を読んで Discord に投稿し、成功したらファイルを削除する。投稿成否はルーティーン側では関知しない。

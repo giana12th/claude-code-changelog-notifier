@@ -15,14 +15,13 @@
 ネットワーク: Custom
   許可ドメイン（1行1ドメイン）:
     www.anthropic.com
-    discord.com
   "Also include default list of common package managers" → オフ
-環境変数（.env形式、値をクォートで囲まない）:
-  DISCORD_WEBHOOK_URL=https://discord.com/api/webhooks/xxxx/yyyy
+環境変数: （設定不要）
 Setup script: （空でよい）
 ```
 
 > Pythonは標準でインストール済みのため Setup script 不要。
+> Discord への投稿は GitHub Actions が行うため、Routine Environment に `DISCORD_WEBHOOK_URL` や `discord.com` の許可ドメインは **不要**。ルーティーンは `pending/<routine>.txt` にメッセージを書いて push するだけ。
 
 **Environmentが表示されないとき**  
 リポジトリにclaudeのGithub-appをインストールしてみる  
@@ -48,6 +47,34 @@ git push origin main
 ```
 
 > 初回分岐なし。初期値より新しい記事が配信対象になる。
+
+---
+
+### 3. GitHub Actions の設定
+
+Discord 投稿は GitHub Actions（`.github/workflows/discord-notify.yml`）が行う。リポジトリ側で下記を設定する。
+
+#### 3-1. Secret の登録
+
+リポジトリ → **Settings** → **Secrets and variables** → **Actions** → **New repository secret**
+
+| 項目 | 値 |
+|------|----|
+| Name | `DISCORD_WEBHOOK_URL` |
+| Value | Discord Webhook URL（`https://discord.com/api/webhooks/xxxx/yyyy`） |
+
+#### 3-2. Workflow permissions
+
+リポジトリ → **Settings** → **Actions** → **General** → **Workflow permissions**
+
+- **Read and write permissions** を選択
+  - 理由：workflow が投稿成功後に `pending/*.txt` を削除して commit/push する
+- **Allow GitHub Actions to create and approve pull requests** は不要（チェック不要）
+
+#### 3-3. 動作確認
+
+`.github/workflows/discord-notify.yml` が main にある状態で、リポジトリの **Actions** タブに "Discord Notify" workflow が表示されることを確認する。
+初回は `workflow_dispatch` で手動起動してテストできる（pending ファイルが空なら何も起きずに成功終了する）。
 
 ---
 
@@ -117,13 +144,24 @@ git push origin main
 
 ```
 □ Environmentのネットワーク設定が Custom になっている
-□ www.anthropic.com / discord.com が許可されている
-□ DISCORD_WEBHOOK_URL が環境変数に入っている
+□ www.anthropic.com が許可されている（discord.com は不要）
+□ Routine Environment に DISCORD_WEBHOOK_URL は設定していない
+□ GitHub Secrets に DISCORD_WEBHOOK_URL が登録されている
+□ GitHub Actions の Workflow permissions が "Read and write" になっている
+□ pending/ ディレクトリ（.gitkeep 入り）がリポジトリに存在する
+□ Actions タブに "Discord Notify" workflow が表示されている
 □ 4本すべて Allow unrestricted branch pushes がオン
 □ 4本すべて Connectors がすべて外れている
 □ state/*.txt に初期値が手動でセットされている
 □ 各Routineで Run now を実行して動作確認
 ```
+
+## 既存運用から移行する場合（任意）
+
+旧運用で設定済みの以下は削除してよい（残しても害はない）：
+
+- Routine Environment の環境変数 `DISCORD_WEBHOOK_URL`
+- Routine Environment の許可ドメイン `discord.com`
 
 ---
 

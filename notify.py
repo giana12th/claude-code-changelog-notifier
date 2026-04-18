@@ -95,8 +95,8 @@ def main() -> None:
         for chunk in chunks:
             post(webhook_url, build_payload(chunk))
     except RuntimeError as e:
-        print(f"投稿に失敗しました。本セッションは終了してください。: {e}", file=sys.stderr)
-        sys.exit(0)
+        print(f"投稿に失敗しました: {e}", file=sys.stderr)
+        sys.exit(1)
 
     print(f"Sent to Discord ({len(chunks)} message(s))")
 
