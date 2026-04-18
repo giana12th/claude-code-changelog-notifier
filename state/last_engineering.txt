@@ -1,1 +1,1 @@
-https://www.anthropic.com/engineering/claude-code-auto-mode
+https://www.anthropic.com/engineering/infrastructure-noise
