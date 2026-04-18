@@ -41,9 +41,9 @@ anthropic-discord-notifier/
 6. 要約テキストを `pending/<routine>.txt` に **追記** する（`>>` を使う）
    - 既存ファイルがある場合は前回Discord投稿失敗分が残っているので、それに続けて書く
 7. `state/last_*.txt` を更新する
-8. `pending/<routine>.txt` と `state/last_*.txt` を一括 commit して mainブランチに直接 push する（PRは作らない）
+8. `pending/<routine>.txt` と `state/last_*.txt` を一括 commit し、作業ブランチに push して main 向けの PR を作成する
 
-push 後、GitHub Actions（`.github/workflows/discord-notify.yml`）が `pending/**` の変更を検知して起動し、pending ファイルを読んで Discord に POST する。成功したら Actions が pending ファイルを削除して commit する。ルーティーンは Discord 投稿の成否に関与しない。
+PR 作成後、GitHub Actions（`.github/workflows/discord-notify.yml`）が PR を検知して起動する。ファイル差分が `pending/**` と `state/**` のみであれば auto-merge し、同じ workflow 内で pending ファイルを読んで Discord に POST する。成功したら Actions が pending ファイルを削除して main に commit する。ルーティーンは auto-merge と Discord 投稿の成否に関与しない。
 
 **新着なしの場合は `pending/` にも `state/` にも何も書かず終了する。**
 
@@ -85,10 +85,10 @@ EOF
 # state を更新
 echo "2.1.91" > state/last_changelog.txt
 
-# pending と state を同じ commit にまとめて push
+# pending と state を同じ commit にまとめて作業ブランチに push、main 向け PR を作成
 git add pending/changelog.txt state/last_changelog.txt
 git commit -m "notify: changelog 2.1.91"
-git push origin main
+# 作業ブランチに push して main 向けの PR を作成する
 ```
 
 - `pending/<routine>.txt` は Actions が投稿成功時に削除する
@@ -99,13 +99,13 @@ git push origin main
 ## エラーハンドリング
 
 ### Discord投稿が失敗したとき
-- ルーティーン側では感知しない（pending を書いて push した時点で責務完了）
-- GitHub Actions 側で `notify.py` が exit 1 した場合、`pending/<routine>.txt` は **削除せず残す**
-- 次回ルーティーン実行時、pending が残っていれば追記する形で新着分が足され、一括で再送される
+- ルーティーン側では感知しない（pending を書いて PR を作成した時点で責務完了）
+- GitHub Actions 側で `notify.py` が exit 1 した場合、`pending/<routine>.txt` は **削除せず残す**（PR は既に merge 済み）
+- 次回ルーティーン実行時、pending が残っていれば追記する形で新着分が足され、新しい PR 経由で一括再送される
 - 連続失敗は Discord通知が届かないことでユーザーが気づく（Actions の実行履歴も確認できる）
 
 ### 記事取得・要約が失敗したとき
-- 失敗した旨を `pending/<routine>.txt` に書き出して push する
+- 失敗した旨を `pending/<routine>.txt` に書き出して PR を作成する
   例：`⚠️ [Routine名] 記事取得に失敗しました: <エラー内容>`
 - `state/last_*.txt` は更新しない
 - エラー内容を見てユーザーが適宜対応する

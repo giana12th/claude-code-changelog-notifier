@@ -13,10 +13,10 @@ Anthropic Newsの新着記事を日本語要約してDiscordに投稿する。
 5. 下記フォーマットの投稿テキストを組み立てる
 6. `pending/news.txt` に投稿テキストを書き出す（既存ファイルがあれば追記）
 7. 最新記事のURLを `state/last_news.txt` に書き込む
-8. `pending/news.txt` と `state/last_news.txt` をまとめて git commit & push する
+8. `pending/news.txt` と `state/last_news.txt` をまとめて作業ブランチに commit & push し、main 向けの PR を作成する
 
 新着がない場合は `pending/` にも `state/` にも何も書かず終了する。
-Discordへの実際の投稿は GitHub Actions（`.github/workflows/discord-notify.yml`）が push を検知して行う。
+PR 作成後の auto-merge と Discord 投稿は GitHub Actions が行う。ルーティーン側では関知しない。
 
 ## 要約スタイル
 
@@ -60,13 +60,13 @@ EOF
 
 > `>>` で追記する点に注意（`>` で上書きすると前回未送信分が消える）。
 
-## state更新とgit push
+## state更新とPR作成
 
 ```bash
 echo "https://www.anthropic.com/news/..." > state/last_news.txt
 git add pending/news.txt state/last_news.txt
 git commit -m "notify: news"
-git push origin main
+# 作業ブランチに push して main 向けの PR を作成する
 ```
 
-push 後は GitHub Actions が `pending/news.txt` を読んで Discord に投稿し、成功したらファイルを削除する。投稿成否はルーティーン側では関知しない。
+PR が作られたら GitHub Actions が auto-merge し、同じ workflow 内で `pending/news.txt` を読んで Discord に投稿、成功したらファイルを削除する。auto-merge も Discord 投稿もルーティーン側では関知しない。

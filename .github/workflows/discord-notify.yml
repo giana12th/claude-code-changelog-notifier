@@ -1,10 +1,8 @@
-name: Discord Notify
+name: Auto-merge routine PR and notify
 
 on:
-  push:
-    branches: [main]
-    paths:
-      - 'pending/**'
+  pull_request:
+    types: [opened, reopened, synchronize]
   workflow_dispatch:
 
 concurrency:
@@ -16,14 +14,50 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
+      pull-requests: write
     steps:
+      - name: Verify PR only touches pending/ and state/
+        id: check
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          files=$(gh pr diff ${{ github.event.pull_request.number }} \
+            --repo ${{ github.repository }} --name-only)
+          if [ -z "$files" ]; then
+            echo "No files changed"
+            exit 0
+          fi
+          non_matching=$(echo "$files" | grep -vE '^(pending/|state/)' || true)
+          if [ -n "$non_matching" ]; then
+            echo "Non-routine files detected, skipping:"
+            echo "$non_matching"
+            exit 0
+          fi
+          echo "ok=true" >> "$GITHUB_OUTPUT"
+
+      - name: Merge PR
+        if: steps.check.outputs.ok == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh pr merge ${{ github.event.pull_request.number }} \
+            --repo ${{ github.repository }} \
+            --merge \
+            --delete-branch
+
       - uses: actions/checkout@v5
+        if: steps.check.outputs.ok == 'true'
+        with:
+          ref: main
+          fetch-depth: 0
 
       - uses: actions/setup-python@v6
+        if: steps.check.outputs.ok == 'true'
         with:
           python-version: '3.x'
 
       - name: Post pending files to Discord
+        if: steps.check.outputs.ok == 'true'
         env:
           DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
         run: |
@@ -43,7 +77,7 @@ jobs:
           exit $failed
 
       - name: Commit pending removals
-        if: always()
+        if: steps.check.outputs.ok == 'true' && always()
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
