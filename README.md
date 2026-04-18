@@ -89,6 +89,10 @@ AnthropicはGoogleおよびBroadcomと...
 🔗 https://www.anthropic.com/research/trustworthy-agents
 ```
 
+## ブログ
+
+- [Anthropicの一次情報を Discord に流すシステムを Claude Code Routines で作った話](blog/anthropic-notifier-claude-code-routines.md)
+
 ## ライセンス
 
 MIT
