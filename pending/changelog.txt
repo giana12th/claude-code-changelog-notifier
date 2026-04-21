@@ -1,0 +1,27 @@
+🔧 **Claude Code アップデート**
+**v2.1.116**
+・`/resume` による大規模セッション（40MB以上）の読み込みが最大67%高速化し、dead-forkエントリが多いセッションの処理も改善
+・複数のstdioサーバー設定時のMCP起動が高速化；`resources/templates/list` を最初の`@`メンションまで遅延実行するように
+・VS Code、Cursor、Windsurfターミナルでのフルスクリーンスクロールが滑らかに — `/terminal-setup` でエディタのスクロール感度を設定するようになった
+・thinkingスピナーがインラインで進行状況を表示するように（"still thinking"、"thinking more"、"almost done thinking"）、別ヒント行を置き換え
+・`/config` 検索でオプション値もマッチするように（例：「vim」検索でエディタモード設定が見つかる）
+・`/doctor` がClaudeの応答中でも開けるように（現在のターンの完了を待つ必要がなくなった）
+・`/reload-plugins` とバックグラウンドのプラグイン自動更新が、追加済みマーケットプレイスから不足する依存関係を自動インストールするように
+・Bash toolが `gh` コマンドでGitHub APIのレート制限に達した際にヒントを表示するように（エージェントが再試行の代わりにバックオフできるよう）
+・設定のUsageタブで5時間・週単位の使用量をすぐに表示するように；usageエンドポイントのレート制限時も失敗しなくなった
+・エージェントfrontmatterの `hooks:` が `--agent` 経由でメインスレッドエージェントとして実行する際にも起動するように
+・スラッシュコマンドメニューでフィルター結果ゼロの場合に消える代わりに「No commands match」を表示するように
+・セキュリティ：sandbox auto-allowが `/`、`$HOME`、その他の重要なシステムディレクトリへの `rm`/`rmdir` に対する危険パスチェックをバイパスしなくなった
+・ターミナルUIでDevanagariやその他のインド系スクリプトの列アライメントが崩れる問題を修正
+・Kittyキーボードプロトコルを使うターミナル（iTerm2、Ghostty、kitty、WezTerm、Windows Terminal）でCtrl+-がアンドゥをトリガーしない問題を修正
+・Kittyキーボードプロトコルを使うターミナル（Warp fullscreen、kitty、Ghostty、WezTerm）でCmd+左右が行頭・行末にジャンプしない問題を修正
+・`npx`、`bun run` などのラッパープロセス経由でClaude Codeを起動した際にCtrl+Zがターミナルをハングさせる問題を修正
+・インラインモードでターミナルのリサイズや大量出力時にスクロールバックが重複する問題を修正
+・ターミナルの高さが短い場合にモーダル検索ダイアログが画面からはみ出し、検索ボックスとキーボードヒントが非表示になる問題を修正
+・VS Code統合ターミナルでスクロール中に空白セルが散在しcomposer chromeが消える問題を修正
+・並列リクエストの完了時にcache control TTL順序に起因するAPIの断続的な400エラーを修正
+・50MBを超えるトランスクリプトを持つ会話で `/branch` が拒否される問題を修正
+・大きなセッションファイルで `/resume` がエラーを報告する代わりに空の会話を表示する問題を修正
+・`/plugin` Installedタブで「Needs attention」や「Favorites」に表示されるアイテムが2回表示される問題を修正
+・worktreeに入った後に `/update` と `/tui` が動作しなくなる問題を修正
+🔗 https://code.claude.com/docs/en/changelog#2-1-116
