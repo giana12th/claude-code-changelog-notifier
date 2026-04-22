@@ -1,0 +1,98 @@
+🔧 **Claude Code アップデート**
+**v2.1.117**
+・フォークされたサブエージェントを `CLAUDE_CODE_FORK_SUBAGENT=1` で外部ビルドにて有効化可能に
+・Agent frontmatter の `mcpServers` が `--agent` 経由のメインスレッドエージェントセッションでも読み込まれるように
+・`/model` の改善: 選択内容がプロジェクトで別モデルが固定されていても再起動後に保持されるように。起動ヘッダーでモデルがプロジェクトまたはマネージド設定で固定されている場合にその旨表示
+・`/resume` コマンドが古く大きなセッションを再読み込み前に要約することを提案するように（既存の `--resume` 動作に合わせた対応）
+・ローカルと claude.ai の MCP サーバーが両方設定されている場合の起動が高速化（同時接続がデフォルト化）
+・`plugin install` が既にインストール済みのプラグインに対して「already installed」で停止せず、不足している依存関係をインストールするように
+・プラグイン依存関係エラーが "not installed" とインストールヒントを表示するように。`claude plugin marketplace add` が設定済みマーケットプレイスから不足している依存関係を自動解決するように
+・マネージド設定の `blockedMarketplaces` と `strictKnownMarketplaces` がプラグインのインストール・更新・リフレッシュ・自動更新時に強制されるように
+・Advisor Tool（実験的）: ダイアログに "experimental" ラベル・詳細リンク・有効時の起動通知を追加。全プロンプトと `/compact` で "Advisor tool result content could not be processed" エラーが出る問題を修正
+・`cleanupPeriodDays` の保持スイープが `~/.claude/tasks/`・`~/.claude/shell-snapshots/`・`~/.claude/backups/` も対象に
+・OpenTelemetry: `user_prompt` イベントにスラッシュコマンドの `command_name` と `command_source` を追加。`cost.usage`・`token.usage`・`api_request`・`api_error` にモデルがサポートする場合 `effort` 属性を追加。カスタム/MCP コマンド名は `OTEL_LOG_TOOL_DETAILS=1` でない限り編集される
+・macOS・Linux のネイティブビルド: `Glob` と `Grep` ツールが組み込みの `bfs` と `ugrep`（Bash ツール経由）に置き換え（Windows と npm インストールビルドは変更なし）
+・Windows: プロセスごとに `where.exe` の実行ファイル検索をキャッシュしてサブプロセス起動を高速化
+・Pro/Max サブスクライバーの Opus 4.6 と Sonnet 4.6 のデフォルト effort が `high` に（従来は `medium`）
+・Plain-CLI OAuth セッションでアクセストークンがセッション中に期限切れになると "Please run /login" で終了する問題を修正（401 でトークンを反応的に更新するように）
+・`WebFetch` が非常に大きな HTML ページでハングする問題を修正（HTML→Markdown 変換前に入力を切り捨てるように）
+・プロキシが HTTP 204 No Content を返した際にクラッシュする問題を修正
+・`CLAUDE_CODE_OAUTH_TOKEN` 環境変数で起動してそのトークンが期限切れの場合に `/login` が効果を持たない問題を修正
+・入力直後に prompt-input undo（`Ctrl+_`）が何もしない問題、および各 undo ステップで状態をスキップする問題を修正
+・Bun 経由で実行時にリモート API リクエストで `NO_PROXY` が尊重されない問題を修正
+・低速接続でキー名が結合テキストとして届く際に稀に発生するエスケープ/リターンの誤トリガー問題を修正
+・SDK `reload_plugins` が全ユーザー MCP サーバーを直列に再接続する問題を修正
+・Bedrock の application-inference-profile リクエストが thinking 無効の Opus 4.7 で 400 エラーになる問題を修正
+・MCP `elicitation/create` リクエストがサーバー接続中に print/SDK モードで自動キャンセルされる問題を修正
+・サブエージェントが異なるモデルで実行した際にファイル読み込みでマルウェア警告が誤って出る問題を修正
+・バックグラウンドタスクがある場合のアイドル再レンダリングループを修正し、Linux でのメモリ増加を軽減
+・[VSCode] 大きなマーケットプレイスが複数設定されている場合に "Manage Plugins" パネルが壊れる問題を修正
+・Opus 4.7 セッションで `/context` のパーセンテージが水増しされ、早期に自動コンパクトが起きる問題を修正（200K ではなく Opus 4.7 のネイティブ 1M で計算するように修正）
+
+**v2.1.116**
+・`/resume` が大きなセッションで大幅高速化（40MB 以上で最大 67%）、デッドフォークエントリが多いセッションも効率的に処理
+・複数の stdio サーバーが設定されている場合の MCP 起動が高速化。`resources/templates/list` は最初の `@` メンションまで遅延するように
+・VS Code・Cursor・Windsurf ターミナルでのフルスクリーンスクロールがスムーズに。`/terminal-setup` でエディタのスクロール感度を設定するように
+・Thinking スピナーがインラインで進捗表示するように（"still thinking"・"thinking more"・"almost done thinking"）。別のヒント行を廃止
+・`/config` 検索がオプション値にもマッチするように（例: "vim" で検索するとエディタモード設定が表示）
+・`/doctor` が Claude の応答中でも開けるように
+・`/reload-plugins` とバックグラウンドのプラグイン自動更新が追加済みマーケットプレイスから不足している依存関係を自動インストールするように
+・Bash ツールが `gh` コマンドが GitHub の API レート制限に達した際にヒントを表示するように
+・設定の Usage タブがすぐに 5 時間と週次の使用状況を表示。使用状況エンドポイントがレート制限されても失敗しないように
+・Agent frontmatter の `hooks:` が `--agent` でメインスレッドエージェントとして実行時に発火するように
+・スラッシュコマンドメニューが、フィルターにマッチするものがない場合に消えるのではなく "No commands match" を表示するように
+・セキュリティ: sandbox の自動許可が `rm`/`rmdir` の危険パス安全チェックを回避しないように
+・Devanagari やその他のインド系文字がターミナル UI で列揃えが崩れてレンダリングされる問題を修正
+・Kitty キーボードプロトコルを使用するターミナルで `Ctrl+-` が undo をトリガーしない問題を修正
+・Kitty キーボードプロトコルを使用するターミナルで `Cmd+Left/Right` が行頭/行末にジャンプしない問題を修正
+・ラッパープロセス（`npx`・`bun run` など）経由で起動した場合に `Ctrl+Z` でターミナルがハングする問題を修正
+・インラインモードでターミナルのリサイズや大量出力時にスクロールバックが重複する問題を修正
+・ターミナルの高さが短い場合にモーダル検索ダイアログが画面からはみ出て検索ボックスが隠れる問題を修正
+・VS Code 統合ターミナルでのスクロール中に散発するブランクセルやコンポーザークロームが消える問題を修正
+・並列リクエスト完了時にキャッシュコントロール TTL の順序に関連した断続的な API 400 エラーが発生する問題を修正
+・`/branch` が 50MB を超えるトランスクリプトの会話を拒否する問題を修正
+・`/resume` が大きなセッションファイルでロードエラーを報告せずに空の会話を表示する問題を修正
+・`/plugin` の Installed タブで同じアイテムが二重表示される問題を修正
+・セッション中に worktree に入った後に `/update` と `/tui` が動作しない問題を修正
+
+**v2.1.114**
+・エージェントチームのチームメートがツールパーミッションをリクエストした際にパーミッションダイアログでクラッシュする問題を修正
+
+**v2.1.113**
+・CLI がバンドルされた JavaScript の代わりにネイティブ Claude Code バイナリ（プラットフォームごとのオプション依存関係経由）を起動するように変更
+・特定のドメインを `allowedDomains` ワイルドカードが許可する場合でもブロックするための `sandbox.network.deniedDomains` 設定を追加
+・フルスクリーンモード: 選択範囲が表示端を超える場合に `Shift+↑/↓` でビューポートをスクロールするように
+・`Ctrl+A` と `Ctrl+E` が複数行入力で現在の論理行の先頭/末尾に移動するように（readline の動作に合わせた対応）
+・Windows: `Ctrl+Backspace` で前の単語を削除するように
+・レスポンスや Bash 出力内の長い URL が行をまたいでラップされても OSC 8 ハイパーリンク対応ターミナルでクリック可能のまま
+・`/loop` の改善: `Esc` で保留中の wakeup をキャンセル。wakeup が "Claude resuming /loop wakeup" と表示されるように
+・`/extra-usage` が Remote Control（モバイル/ウェブ）クライアントから動作するように
+・Remote Control クライアントが `@` ファイルの自動補完候補を照会できるように
+・`/ultrareview` の改善: 並列チェックによる高速化・起動ダイアログに diffstat 表示・アニメーションする起動状態
+・ストリームの途中でスタックしたサブエージェントが 10 分後に明確なエラーで失敗するように（無音でハングする代わりに）
+・Bash ツール: 最初の行がコメントの複数行コマンドがトランスクリプトにコマンド全体を表示するように（UI スプーフィングの経路を閉鎖）
+・`cd <current-directory> && git …` の `cd` が no-op の場合にパーミッションプロンプトが発生しないように
+・セキュリティ: macOS で `/private/{etc,var,tmp,home}` パスが `Bash(rm:*)` 許可ルールで危険な削除対象として扱われるように
+・セキュリティ: Bash deny ルールが `env`/`sudo`/`watch`/`ionice`/`setsid` などの exec ラッパーでラップされたコマンドにもマッチするように
+・セキュリティ: `Bash(find:*)` 許可ルールが `find -exec`/`-delete` を自動承認しないように
+・MCP の同時呼び出しタイムアウト処理で、あるツール呼び出しのメッセージが別の呼び出しのウォッチドッグを無音で解除する問題を修正
+・`Cmd-backspace`/`Ctrl+U` でカーソルから行頭まで削除できない問題を修正
+・セル内にパイプ文字を含むインラインコードスパンがある場合に Markdown テーブルが壊れる問題を修正
+・未送信テキストを入力中にセッション要約が自動発火する問題を修正
+・`/copy` の "Full response" で GitHub・Notion・Slack への貼り付け用に Markdown テーブルの列が揃わない問題を修正
+・実行中のサブエージェントを表示中に入力したメッセージがそのトランスクリプトから隠れ、親 AI に誤帰属する問題を修正
+・Bash `dangerouslyDisableSandbox` がパーミッションプロンプトなしでサンドボックス外のコマンドを実行する問題を修正
+・`/effort auto` の確認メッセージが "Effort level set to max" と表示されるように（ステータスバーのラベルに合わせた対応）
+・`/insights` が Windows で `EBUSY` でクラッシュする問題を修正
+・スラッシュ/@ 補完メニューがフルスクリーンモードでプロンプト境界に接して表示されない問題を修正
+・`CLAUDE_CODE_EXTRA_BODY` の `output_config.effort` が effort をサポートしないモデルへのサブエージェント呼び出しや Vertex AI で 400 エラーになる問題を修正
+・`NO_COLOR` が設定されている場合にプロンプトカーソルが消える問題を修正
+・`ToolSearch` のランキングを修正し、MCP ツール名の貼り付けで実際のツールが表示されるように
+・再開した長コンテキストセッションのコンパクトが "Extra usage is required for long context requests" で失敗する問題を修正
+・`plugin install` で依存関係のバージョンが既存のプラグインと競合する場合に成功してしまう問題を修正（`range-conflict` を報告するように）
+・"Refine with Ultraplan" がトランスクリプトにリモートセッション URL を表示しない問題を修正
+・SDK の画像コンテントブロックの処理が失敗するとセッションがクラッシュする問題を修正（テキストプレースホルダーにデグレードするように）
+・Remote Control セッションがサブエージェントのトランスクリプトをストリームしない問題を修正
+・Claude Code 終了時に Remote Control セッションがアーカイブされない問題を修正
+・Bedrock Application Inference Profile ARN 経由の Opus 4.7 で `thinking.type.enabled is not supported` という 400 エラーになる問題を修正
+🔗 https://code.claude.com/docs/en/changelog
