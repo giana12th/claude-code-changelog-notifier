@@ -1,0 +1,4 @@
+📢 **Anthropic ニュース**
+**Claude Opus 4.7 が一般提供開始**
+Anthropicが最新AIモデル「Claude Opus 4.7」の一般提供を開始しました。前バージョンから複雑なコーディングタスク能力が大幅に向上し、最大2,576ピクセルの高解像度画像対応などビジョン機能も強化されています。Claude API、Amazon Bedrock、Google Cloud Vertex AI、Microsoft Foundryで利用可能で、価格は入力トークン100万個あたり5ドル、出力100万個あたり25ドルです。
+🔗 https://www.anthropic.com/news/claude-opus-4-7
