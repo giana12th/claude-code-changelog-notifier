@@ -1,0 +1,39 @@
+🔧 **Claude Code アップデート**
+**v2.1.118**
+・vim のビジュアルモード（`v`）とビジュアルラインモード（`V`）を追加（選択・オペレーター・視覚フィードバック対応）
+・`/cost` と `/stats` を `/usage` に統合
+・`/theme` から名前付きカスタムテーマを作成・切替可能に
+・フックが `type: "mcp_tool"` で MCP ツールを直接呼び出せるように
+・すべての更新経路をブロックする `DISABLE_UPDATES` 環境変数を追加
+・Windows の WSL が Windows 側の managed settings を継承できるように
+・Auto モード: allow/deny/environment リストに `"$defaults"` を含められるように
+・Auto モードのオプトインプロンプトに「次から聞かない」オプションを追加
+・プラグインリリース用 git タグを作成する `claude plugin tag` を追加
+・`/add-dir` で追加したカレントディレクトリを含むセッションを `--continue`/`--resume` で検索可能に
+・`/color` でセッションのアクセントカラーを claude.ai/code と同期するように
+・`/model` ピッカーが `ANTHROPIC_DEFAULT_*_MODEL_NAME` の環境変数を反映するように
+・MCP OAuth・認証・権限に関する複数の修正
+・`/fork` がディスクに親会話の全データを書き込む問題を修正（ポインターのみ書き込むように変更）
+・Alt+K/X/^/_ でキーボード入力がフリーズする問題を修正
+・Remote Control がローカルのモデル設定を上書きする問題を修正
+・`/` で始まるファイルパスを貼り付けた際のタイプアヘッドエラーを修正
+・プラグインインストール時の依存関係解決の問題を修正
+・サブエージェントが明示的な `cwd` を復元しない問題を修正
+
+**v2.1.117**
+・外部ビルドで `CLAUDE_CODE_FORK_SUBAGENT=1` を指定してフォークサブエージェントを有効化可能に
+・エージェントフロントマターの `mcpServers` がメインスレッドエージェントセッションでも読み込まれるように
+・`/model` の選択が再起動後も保持され、起動ヘッダーにモデルのソースを表示するように
+・`/resume` で古い大規模セッションの要約を提案するように
+・MCP サーバーへの並列接続で起動が高速化
+・既存プラグインへの `plugin install` で不足している依存関係をインストールするように
+・プラグインの依存関係エラーのメッセージを改善
+・Managed settings の `blockedMarketplaces` と `strictKnownMarketplaces` が適用されるように
+・Advisor Tool の改善とエラーハンドリング強化
+・リテンションスイープがタスク・シェルスナップショット・バックアップをカバーするように
+・OpenTelemetry の改善: user_prompt イベントにコマンドメタデータを含むように
+・ネイティブビルド: Glob と Grep を組み込みの bfs および ugrep に置き換え
+・Windows: where.exe のキャッシュによりサブプロセス起動を高速化
+・Pro/Max の Opus/Sonnet 4.6 のデフォルト effort が `high` に変更
+・OAuth・コンテキスト・UI に関する複数のバグ修正
+🔗 https://code.claude.com/docs/en/changelog
