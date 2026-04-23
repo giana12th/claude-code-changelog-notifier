@@ -1,4 +1,0 @@
-📢 **Anthropic ニュース**
-**Anthropic Labs が Claude Design を発表**
-Claude と協力してデザイン・プロトタイプ・スライド・資料などの視覚的な制作物を作成できる新ツール。チームのコードベースやデザインファイルからブランドシステムを自動構築し、Canva・PDF・PPTX・HTML など複数形式へのエクスポートに対応する。Claude Pro / Max / Team / Enterprise サブスクライバー向けに研究プレビューとして提供開始。
-🔗 https://www.anthropic.com/news/claude-design-anthropic-labs
