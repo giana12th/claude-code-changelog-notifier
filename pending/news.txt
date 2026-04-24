@@ -1,0 +1,12 @@
+📢 **Anthropic ニュース**
+**選挙セーフガードに関するアップデート**
+Anthropicが2026年の米国中間選挙に向けてClaudeの選挙関連安全対策を強化したことを報告した。政治的バイアス測定・ポリシー執行・誤情報防止などの多層防御を実施しており、Opus 4.7とSonnet 4.6は選挙関連リクエストへの適切な対応率99〜100%を達成している。投票地点や候補者情報の提供には「TurboVote」などの信頼できるリソースへ誘導するバナーやウェブ検索機能を活用して最新情報を確保している。
+🔗 https://www.anthropic.com/news/election-safeguards-update
+
+**AnthropicとNEC、日本最大のAIエンジニアリング人材育成で提携**
+AnthropicはNEC Corporationと戦略的提携を締結し、NEC社内約30,000人の従業員へClaudeを展開することを発表した。NECはAnthropicの日本初のグローバルパートナーとなり、金融・製造・地方自治体向けの業界特化型AIソリューションを共同開発するほか、社内にAI技術センターを設立して高度なスキルを持つエンジニア組織を構築する予定。ClaudeはNECのサイバーセキュリティサービスおよびNEC BluStellarプログラムにも統合される。
+🔗 https://www.anthropic.com/news/anthropic-nec
+
+**AnthropicとAmazon、最大5ギガワットの計算リソース確保で協業を拡大**
+AnthropicがAmazonと新たな協業契約を締結し、Claude用に最大5ギガワットの計算容量を確保することを発表した。2023年以来の関係をさらに深化させ、AmazonのBedrockプラットフォーム上では既に10万以上の顧客がClaudeを運用している。Anthropicは向こう10年間でAWS技術に100億ドル以上を投資し、Trainium2からTrainium4チップへ段階的に展開する計画で、2026年末までに約1ギガワットの計算容量が追加される見込み。
+🔗 https://www.anthropic.com/news/anthropic-amazon-compute
