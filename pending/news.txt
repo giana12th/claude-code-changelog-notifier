@@ -1,8 +1,0 @@
-📢 **Anthropic ニュース**
-**Claude for Creative Work — クリエイティブ向けAI統合ソリューション発表**
-Anthropicがクリエイティブプロフェッショナル向けの新たなAI統合ソリューション「Claude for Creative Work」を発表した。Adobe Creative Cloud（50以上のツール対応）、Blender、Autodesk Fusion、Abletonなど主要クリエイティブツールとの連携コネクターを実装し、自然言語での3Dモデル操作やサンプル検索などを可能にする。RISD、Ringling College、Goldsmiths Universityの3機関とも連携し、クリエイティブ教育へのAI導入を推進している。
-🔗 https://www.anthropic.com/news/claude-for-creative-work
-
-**AnthropicがAustralia・New Zealand担当General Managerを任命、シドニーオフィスを正式開設**
-AnthropicはオーストラリアおよびニュージーランドのGeneral ManagerにTheo Hourmouzisを任命し、シドニーオフィスを正式に開設した。Hourmouzisは20年以上のアジア太平洋地域での技術業界経験を持ち、元Snowflakeシニアバイスプレジデント。シドニーは東京・ベンガルール・ソウルに次ぐ同社アジア太平洋4番目のオフィスで、CanvaやXeroなど現地企業・政府機関との関係構築に注力する予定。
-🔗 https://www.anthropic.com/news/theo-hourmouzis-general-manager-australia-new-zealand
