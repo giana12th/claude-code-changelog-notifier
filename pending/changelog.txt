@@ -1,0 +1,24 @@
+🔧 **Claude Code アップデート**
+**v2.1.123**
+・`CLAUDE_CODE_DISABLE_EXPERIMENTAL_BETAS=1` が設定されている場合にOAuth認証が401リトライループで失敗する問題を修正
+
+**v2.1.122**
+・`ANTHROPIC_BEDROCK_SERVICE_TIER` 環境変数を追加。Bedrockサービスティア（`default`、`flex`、`priority`）を選択でき、`X-Amzn-Bedrock-Service-Tier` ヘッダーとして送信される
+・`/resume` の検索ボックスにPR URLを貼り付けると、そのPRを作成したセッションを検索できるようになった（GitHub、GitHub Enterprise、GitLab、Bitbucket対応）
+・`/mcp` が、同じURLを持つ手動追加サーバーに隠されていたclaude.aiコネクターを表示し、重複を削除するヒントを表示するようになった
+・ブラウザのサインインフロー後もMCPサーバーが未認証のままの場合に表示される `/mcp` のメッセージを明確化
+・OpenTelemetry: `api_request`/`api_error` ログイベントの数値属性が、文字列ではなく数値として出力されるようになった
+・OpenTelemetry: `@`メンション解決のための `claude_code.at_mention` ログイベントを追加
+・元のセッションに巻き戻されたタイムラインのエントリが含まれる場合に、`/branch` が "tool_use ids were found without tool_result blocks" エラーで失敗するフォークを生成する問題を修正
+・BedrockアプリケーションARNに対して `/model` がEffortオプションを表示しない問題、およびそのARNが `output_config.effort` を受け取らない問題を修正
+・Vertex AI / Bedrockがセッションタイトル生成などの構造化出力クエリで `invalid_request_error: output_config: Extra inputs are not permitted` を返す問題を修正
+・プロキシゲートウェイ経由のユーザーに対してVertex AIの `count_tokens` エンドポイントが400エラーを返す問題を修正
+・`spinnerTipsOverride.excludeDefault` が時間ベースのスピナーTipsを非表示にしない問題を修正
+・ノンブロッキングモードでセッション開始後に接続したMCPツールをToolSearchが見つけられない問題を修正
+・bashモードで `!exit` / `!quit` がシェルコマンドとして実行される代わりにCLIを終了させる問題を修正
+・新しいモデルに送信された画像が正しい2000px最大値ではなく2576pxにリサイズされる問題を修正
+・リモートコントロールセッションのアイドル状態が毎秒2回再描画され、`tmux -CC` のコントロールパイプを溢れさせてターミナルを停止させる可能性がある問題を修正
+・古いビュー設定により一部のセッションでアシスタントメッセージが空白で表示される問題を修正
+・`settings.json` 内の不正なhooksエントリがファイル全体を無効化してしまう問題を修正
+・ボイスモード: ターミナルがCaps Lockをキーイベントとしてデリバリーしないため、Caps Lockにバインドされたキーバインドがエラーを表示するようになった
+🔗 https://code.claude.com/docs/en/changelog
