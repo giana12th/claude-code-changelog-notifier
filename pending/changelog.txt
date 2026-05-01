@@ -1,0 +1,35 @@
+🔧 **Claude Code アップデート**
+**v2.1.126**
+・`/model` ピッカーが、`ANTHROPIC_BASE_URL` が Anthropic 互換ゲートウェイを指している場合、ゲートウェイの `/v1/models` エンドポイントからモデルを一覧表示するようになった
+・`claude project purge [path]` コマンドを追加。プロジェクトの Claude Code 状態（transcripts・tasks・file history・config エントリ）をすべて削除。`--dry-run`、`-y/--yes`、`-i/--interactive`、`--all` に対応
+・`--dangerously-skip-permissions` が `.claude/`、`.git/`、`.vscode/`、シェル設定ファイルなど従来保護されていたパスへの書き込みプロンプトもバイパスするようになった（壊滅的な削除コマンドは安全対策として引き続きプロンプトを表示）
+・`claude auth login` が、ブラウザコールバックが localhost に到達できない環境（WSL2・SSH・コンテナ）でターミナルに貼り付けた OAuth コードを受け付けるようになった
+・`claude_code.skill_activated` OpenTelemetry イベントがユーザー入力のスラッシュコマンドでも発火するようになり、`invocation_trigger` 属性（`"user-slash"`、`"claude-proactive"`、`"nested-skill"`）が追加された
+・Auto mode: パーミッションチェックが止まった際に、ツールが実行中のように見える代わりにスピナーが赤くなるようになった
+・ホスト管理デプロイメント（`CLAUDE_CODE_PROVIDER_MANAGED_BY_HOST`）が Bedrock/Vertex/Foundry でアナリティクスを自動無効化しなくなった
+・Windows: Microsoft Store・PATH なし MSI・`.NET global tool` でインストールされた PowerShell 7 を検出できるようになった
+・Windows: PowerShell ツールが有効な場合、Claude がデフォルトで Bash の代わりに PowerShell をプライマリシェルとして扱うようになった
+・Read ツール: レガシーモデルで不当な拒否や「これはマルウェアではありません」コメントを引き起こすことがあったファイルごとのマルウェア評価リマインダーを削除
+・**セキュリティ:** 上位優先度のマネージド設定ソースに `sandbox` ブロックがない場合に `allowManagedDomainsOnly` / `allowManagedReadPathsOnly` が無視される問題を修正
+・2000px を超える画像を貼り付けるとセッションが壊れる問題を修正。画像は貼り付け時にダウンスケールされ、履歴内の過大な画像は自動削除されてリクエストが再試行されるようになった
+・「OAuth not allowed for organization」エラーで管理者への連絡ガイダンスが正しく表示されるようになった（以前はログイン画面が表示されていた）
+・低速・プロキシ接続、IPv6 のみの devcontainer、ブラウザコールバックが localhost に到達できない環境で OAuth ログインがタイムアウトで失敗する問題を修正
+・並行した認証情報の書き込みで有効な OAuth リフレッシュトークンが消去されることがある稀なレースコンディションを修正
+・API リトライカウントダウンが試行間で「0s」のまま動かない問題を修正
+・Mac をスリープ中にリクエスト中だった場合の「Stream idle timeout」エラーを修正
+・バックグラウンドおよびリモートセッションが長いモデル思考中断時に「Stream idle timeout」で誤って中断される問題を修正
+・アシスタントが思考を終えても空ターンが続いた後に出力が表示されないハング問題を修正
+・Cursor および VS Code 1.92–1.104 統合ターミナルでトラックパッドのスクロールが速すぎる問題を修正
+・needs-auth 状態で止まったマニュアルサーバーによって claude.ai MCP コネクタが抑制される問題を修正
+・Windows のノーフリッカーモードで日本語・韓国語・中国語テキストが文字化けする問題を修正
+・`Ctrl+L` がプロンプト入力をクリアしてしまう問題を修正。画面の再描画のみを行うようになり、readline の動作に一致した
+・`context: fork` などのサブエージェントの最初のターンで遅延ツール（WebSearch・WebFetch など）が利用できない問題を修正
+・`--channels` で起動したインタラクティブセッションでプランモードのツールが利用できない問題を修正
+・`/plugin` の Uninstall が「Uninstalled」ではなく「Enabled」と表示する問題を修正
+・リンターが一度に多くのファイルを変更した際のファイル変更リマインダーの合計サイズに上限を設定
+・`/remote-control` の再試行が「connecting…」のまま止まって見える問題を修正。各再試行で結果が表示されるようになった
+・Remote Control の初回接続失敗時にエラー理由が表示されない問題を修正
+・Windows: クリップボード書き込み時に EDR/SIEM テレメトリのプロセスコマンドライン引数にコピー内容が露出しなくなった。また 22KB を超える選択範囲がクリップボードに届かない問題も修正
+・PowerShell ツール: `git diff -- file` のようなベアの `--` が `--%` 解析停止トークンとして誤ってフラグされなくなった
+・Agent SDK で並行ツール呼び出しバッチ内でモデルが不正なツール名を出力した際のハングを修正
+🔗 https://code.claude.com/docs/en/changelog#2-1-126
