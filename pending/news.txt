@@ -1,0 +1,4 @@
+📢 **Anthropic ニュース**
+**Blackstone・Hellman & Friedman・Goldman Sachsと共同でエンタープライズAIサービス企業を設立**
+AnthropicはBlackstone、Hellman & Friedman、Goldman Sachsと連携し、中堅企業がClaudeを中核業務に統合するのを支援する新会社の設立を発表した。Anthropicの応用AIエンジニアが顧客企業のエンジニアと協働し、最大の効果を発揮できる領域でカスタムソリューションを構築する。CFOのKrishna Rao氏は「エンタープライズ需要が単一の配信モデルを大幅に上回っている」と述べており、General Atlantic・Apollo Global Management・Sequoia Capitalなど複数の資産運用会社も出資している。
+🔗 https://www.anthropic.com/news/enterprise-ai-services-company
