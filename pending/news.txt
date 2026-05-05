@@ -1,0 +1,4 @@
+📢 **Anthropic ニュース**
+**金融サービス向けAIエージェントの提供開始**
+Anthropicは金融サービス業界向けに10個のAIエージェントテンプレートをリリースした。ピッチブック作成・KYCスクリーニング・月次決算業務などの時間消費的なタスクを自動化でき、Claude Cowork・Claude Code・Claude Managed Agentsから利用可能。Microsoft 365（Excel・PowerPoint・Word・Outlook）との統合も提供され、Moody'sやDun & Bradstreetなど8つの新規データコネクタも追加された。基盤モデルのClaude Opus 4.7は財務エージェントベンチマークで業界トップの64.37%を達成している。
+🔗 https://www.anthropic.com/news/finance-agents
