@@ -1,0 +1,4 @@
+📢 **Anthropic ニュース**
+**Claude の利用制限引き上げと SpaceX とのコンピュート提携**
+AnthropicはPro・Max・Team・EnterpriseプランでClaude Codeの5時間レート制限を2倍に引き上げ、ピーク時の制限削除とOpus APIレート制限の大幅増量を実施した。SpaceXのColossus 1データセンターへのアクセスを確保し、300メガワット超（約22万基のNVIDIA GPU）の新たなコンピュート容量を1ヶ月以内に追加予定。Amazon・Google・Microsoft等との複数の大規模コンピュート契約も並行して進め、アジア・欧州への国際展開も計画している。
+🔗 https://www.anthropic.com/news/higher-limits-spacex
