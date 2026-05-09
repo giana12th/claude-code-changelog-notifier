@@ -1,7 +1,0 @@
-🔧 **Claude Code アップデート**
-**v2.1.138**
-・内部修正のみ
-
-**v2.1.137**
-・[VSCode] Windows上での拡張機能の起動失敗を修正
-🔗 https://code.claude.com/docs/en/changelog
