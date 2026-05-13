@@ -1,0 +1,4 @@
+📢 **Anthropic ニュース**
+**Claude for Small Businessの紹介**
+Anthropicが、小規模企業向けのAIソリューション「Claude for Small Business」を発表しました。QuickBooks、PayPal、HubSpot、Canva、DocSign、Google Workspace、Microsoft 365などの既存ツールにClaudeを統合し、給与計画、月次決算、営業キャンペーン、請求書追跡などのタスクを自動化します。15個のワークフローと15個のスキルを備えており、小規模企業経営者が日常業務の負担を軽減できるよう設計されています。
+🔗 https://www.anthropic.com/news/claude-for-small-business
