@@ -1,0 +1,4 @@
+📢 **Anthropic ニュース**
+**Gates Foundation との2億ドルのパートナーシップ締結**
+AnthropicはBill & Melinda Gates Foundationと2億ドル規模のパートナーシップを締結した。グローバルヘルス・教育・経済的流動性の3分野でClaudeのAI技術を活用し、市場メカニズムだけでは届かない社会課題への取り組みを目指す。ワクチン開発支援やポリオ・HPVなど軽視されてきた疾病の治療法スクリーニング、K-12向け数学チュータリング、農業生産性向上など、低所得国を中心にAIの恩恵を広げることに注力する。
+🔗 https://www.anthropic.com/news/gates-foundation-partnership
