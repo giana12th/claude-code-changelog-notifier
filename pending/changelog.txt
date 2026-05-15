@@ -1,0 +1,11 @@
+🔧 **Claude Code アップデート**
+**v2.1.142**
+・`claude agents` コマンドに拡張フラグを追加: `--add-dir`, `--settings`, `--mcp-config`, `--plugin-dir`, `--permission-mode`, `--model`, `--effort`, `--dangerously-skip-permissions`
+・Fast Mode が Opus 4.6 から Opus 4.7 に変更（`CLAUDE_CODE_OPUS_4_6_FAST_MODE_OVERRIDE=1` で旧バージョンに戻せる）
+・ルートレベルの `SKILL.md` ファイルがスキルとして認識されるように改善
+・`/plugin` 詳細ペインで LSP サーバー情報を表示
+・`/web-setup` で GitHub App 接続の置換前に警告を表示
+・`MCP_TOOL_TIMEOUT` がリモート HTTP/SSE MCP サーバーに正しく適用されるよう修正
+・バックグラウンドセッションで Git worktree を事前認識・macOS sleep/wake 後のデーモン再接続問題を修正
+・Windows: ネットワークドライブでのデッドロック解消、Ctrl+C 対応
+🔗 https://code.claude.com/docs/en/changelog#2-1-142
