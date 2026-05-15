@@ -1,4 +1,0 @@
-📢 **Anthropic ニュース**
-**PwCがClaudeを活用して企業向けテクノロジー構築・M&A実行・業務革新を推進**
-AnthropicとPwCは戦略的提携の拡大を発表し、PwCがクライアント企業のAI活用を支援する。Claude CodeとCoworkをPwCの数十万人の専門家に段階的展開し、3万人を対象とした認定プログラムと卓越性センターを設立する。AIネイティブなM&A実行や財務・HR・サプライチェーン業務の革新に注力し、保険引受業務を10週間から10日に短縮するなど最大70%の納期改善を実現している。
-🔗 https://www.anthropic.com/news/pwc-expanded-partnership
