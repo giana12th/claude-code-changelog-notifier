@@ -1,4 +1,0 @@
-📢 **Anthropic ニュース**
-**AnthropicがStainlessを買収**
-AnthropicはSDKおよびMCPサーバーツールの開発企業Stainlessの買収を発表した。2022年創業のStainlessはAnthropicの公式SDK全種の生成を担い、TypeScript・Python・Go・Java・Kotlinなど複数言語向けにSDK・CLI・MCPサーバーを数百社に提供してきた。AIが「回答するモデル」から「行動するエージェント」へシフトする中、エージェントの接続性を強化してClaudeプラットフォームの開発者体験を向上させることが買収の狙い。
-🔗 https://www.anthropic.com/news/anthropic-acquires-stainless
