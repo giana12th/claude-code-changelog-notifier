@@ -1,4 +1,0 @@
-📢 **Anthropic ニュース**
-**KPMGがAnthropicと戦略的提携、Claudeを276,000人以上の全従業員に展開**
-KPMGがAnthropicと戦略的提携を発表し、Claude AIを同社全体で統合することを表明しました。138カ国で事業展開するKPMGの276,000人以上の全従業員がClaudeにアクセス可能になり、主要プラットフォーム「Digital Gateway」にClaudeが組み込まれ税務・法務クライアント向けの新ツールが提供されます。また両社は、プライベート・エクイティのポートフォリオ企業向けにClaude搭載の新製品を共同開発し、サイバーセキュリティ分野でも協力しながら「責任あるAI」の展開を重視しています。
-🔗 https://www.anthropic.com/news/anthropic-kpmg
