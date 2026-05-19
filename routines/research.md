@@ -8,7 +8,12 @@ Anthropic Researchの新着論文・レポートを日本語要約してDiscord�
 
 1. `state/last_research.txt` を読み、最後に通知した記事URLを取得する
 2. `https://www.anthropic.com/research` をフェッチして記事一覧を取得する
-3. 前回URLより新しい記事を特定する（ページ上部が最新）
+3. ページ下部の通常の記事一覧（Publications セクション、日付付き、新しい順）を対象にする
+   （ページ上部のフィーチャードセクションは対象外）。
+   一覧の中で `last_research.txt` のURLを見つけ、
+   それより上（より新しい日付）の記事のみを新着とする。
+   `last_research.txt` のURLが一覧に見つからない場合は、
+   一覧の先頭から最新数件を新着として扱う。
 4. 新着記事それぞれの本文をフェッチする
 5. 下記フォーマットの投稿テキストを組み立てる
 6. `pending/research.txt` に投稿テキストを書き出す（既存ファイルがあれば追記）
