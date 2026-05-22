@@ -1,4 +1,0 @@
-📢 **Anthropic ニュース**
-**Project Glasswing：初期アップデート**
-AnthropicはAIを活用して重要なソフトウェアの脆弱性を発見・修正する協調プロジェクト「Project Glasswing」の初期成果を報告した。約50のパートナー組織と連携し、わずか1ヶ月で10,000件以上の高・重大度の脆弱性を発見するなど大きな成果を上げている。一方、脆弱性の発見速度にパッチ適用が追いつかないという新たなボトルネックも浮き彫りになっており、AnthropicはClaude Securityツールの提供やオープンソース財団との連携などで対応を支援している。
-🔗 https://www.anthropic.com/research/glasswing-initial-update
