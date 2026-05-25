@@ -1,0 +1,10 @@
+🔬 **Anthropic Research**
+**Project Glasswing：初期アップデート** `Security / Alignment`
+
+Anthropicは、AIを用いた大規模なソフトウェア脆弱性発見プロジェクト「Glasswing」の初期成果を報告した。Claude Mythos Previewモデルを活用し、約50のパートナー機関と協力して1,000以上のオープンソースプロジェクトを自動スキャン。発見された脆弱性は独立した第三者が検証し、90日の調整済み情報開示（Coordinated Vulnerability Disclosure）ルールに従って報告される。
+
+わずか1か月で1万件超の高・重大度（High/Critical）脆弱性を検出。真陽性率は90.6%、うち62.4%が高・重大度に分類された。CloudflareやMozillaのFirefoxでも数百件規模のバグが発見されており、旧モデル（Opus）比で10倍以上の検出精度向上が確認されている。
+
+プロジェクトの重要な示唆として、「脆弱性の発見速度はもはや制約ではなく、検証・パッチ適用・開示のプロセス速度が新たなボトルネック」となっている点が挙げられる。攻撃者もAIを活用できる状況下で、防御側の基盤強化（パッチサイクルの短縮、多要素認証の徹底等）が急務であり、AIをサイバー防御に積極活用する実証例として注目される。
+
+🔗 https://www.anthropic.com/research/glasswing-initial-update
