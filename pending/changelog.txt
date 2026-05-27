@@ -1,0 +1,37 @@
+🔧 **Claude Code アップデート**
+**v2.1.152**
+・`/code-review --fix` でレビュー結果をワーキングツリーに適用できるようになった
+・`/simplify` が `/code-review --fix` を呼び出すようになった
+・スキルとスラッシュコマンドがフロントマターに `disallowed-tools` を設定して、モデルからツールを除外できるようになった
+・`/reload-skills` コマンドを追加 — 再起動なしにスキルディレクトリを再スキャンできる
+・`SessionStart` フックが `reloadSkills: true` を返せるようになり、スキルディレクトリを再スキャンできる
+・`SessionStart` フックが `hookSpecificOutput.sessionTitle` でセッションタイトルを設定できるようになった
+・`MessageDisplay` フックイベントを追加 — アシスタントメッセージのテキストを変換・非表示にできる
+・`pluginSuggestionMarketplaces` 管理設定を追加 — 管理者が組織マーケットプレイスをallowlistできる
+・`claude plugin marketplace remove` が `--scope user|project|local` を受け付けるようになった
+・プライマリモデルが見つからない場合に Claude Code が `--fallback-model` に切り替わるようになった
+・Auto mode でオプトイン同意が不要になった
+・Vim モード: NORMAL モードで `/` を押すと逆順履歴検索が開く（Ctrl+R と同様）
+・`/usage` の内訳に大きなセッションファイルが含まれるようになった
+・思考サマリーが最低3秒間表示され、Markdownレンダリング、最大10行に制限されるようになった
+・フルスクリーンモードで "Thinking for Ns" インジケーターがライブカウントアップするようになった
+・Workflow ツールのインラインプログレス表示を簡略化
+・レスポンス後タイマーに "Waiting for N background agents/workflows" ステータスを表示するようになった
+・`app.entrypoint` OpenTelemetry メトリクス属性を追加
+・長時間セッションでのターミナルスタイル劣化を修正
+・圧縮スタートアップモードでサンドボックス有効警告が表示されない問題を修正
+・ローディングスピナーが誤った思考ステータスを表示する問題を修正
+・フォーカスモードで "N messages hidden" カウントが誤って表示される問題を修正
+・展開したツール結果内のリンクをクリックできない問題を修正
+・Markdownテーブルのセルの枠線とスタイルの問題を修正
+・同じコマンドを持つプラグインMCPサーバーが誤って重複排除される問題を修正
+・`/doctor` が古いマーケットプレイス/プラグインエントリを報告する問題を修正
+・gitブランチを追跡するプラグインがレジストリ再ビルド後に更新を受け取れない問題を修正
+・エグレスプロキシ使用時にリモートMCPサーバーがClaude Code Remoteで失敗する問題を修正
+・effortの変更確認ダイアログが不適切に表示される問題を修正
+・`--bare` またはアタッチメント無効時のAgent toolの説明の問題を修正
+・`claude agents` でバックグラウンドワーカーがクラッシュする問題を修正
+・`cache_creation_input_tokens` が0として報告される問題を修正
+・SDKホストセッションでPushNotification toolがステータスを誤って報告する問題を修正
+・staleなthinking-blockシグネチャによりモデル/ログイン切り替え後にセッションがスタックする問題を修正
+🔗 https://code.claude.com/docs/en/changelog#2-1-152
