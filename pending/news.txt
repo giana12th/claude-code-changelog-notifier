@@ -1,4 +1,0 @@
-📢 **Anthropic ニュース**
-**AnthropicがKiYoung ChoiをKorea代表取締役に任命、ソウルオフィス開設へ**
-AnthropicはKiYoung Choiを韓国代表取締役に任命し、ソウルオフィスの開設を発表した。韓国はClaudeの最も活発な市場の一つで、人口規模から予想される以上の頻度でClaudeが活用されており、技術・創作業務での利用が顕著。Choiは以前Snowflake韓国のゼネラルマネージャーを務め、Google CloudやAdobeなど複数の大企業でリーダーシップ経験を持つ。
-🔗 https://www.anthropic.com/news/kiyoung-choi-representative-director-anthropic-korea
