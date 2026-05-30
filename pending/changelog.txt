@@ -1,4 +1,0 @@
-🔧 **Claude Code アップデート**
-**v2.1.158**
-・Auto modeがBedrock、Vertex、FoundryでOpus 4.7およびOpus 4.8向けに利用可能になりました。`CLAUDE_CODE_ENABLE_AUTO_MODE=1` を設定することでオプトインできます。
-🔗 https://code.claude.com/docs/en/changelog#2-1-158
