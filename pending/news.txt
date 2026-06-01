@@ -1,0 +1,4 @@
+📢 **Anthropic ニュース**
+**AnthropicがSECに機密草案S-1を提出**
+Anthropicは2026年6月1日、米証券取引委員会（SEC）に機密草案登録書（Form S-1）を提出した。これはIPO（新規株式公開）のための準備手続きであり、SECの審査完了後に上場する選択肢が得られる。ただし、実際の上場は市場状況その他の要因に左右されるとしており、公開株数や価格はまだ決定されていない。
+🔗 https://www.anthropic.com/news/confidential-draft-s1-sec
