@@ -1,0 +1,4 @@
+📢 **Anthropic ニュース**
+**Project Glasswingの拡大**
+AnthropicはAIを活用して重要インフラのソフトウェアを保護する取り組み「Project Glasswing」を拡大し、新たに15カ国以上の約150組織を参加させると発表した。初期段階で約50のパートナー機関がClaude Mythosプレビューを使ったコードベース脆弱性スキャンを実施し、すでに10,000件以上の高リスクなセキュリティ欠陥を発見している。新たに参加する組織は電力・水道・医療・通信・ハードウェアなど多様な重要インフラ分野をカバーする。
+🔗 https://www.anthropic.com/news/expanding-project-glasswing
