@@ -1,0 +1,12 @@
+🔧 **Claude Code アップデート**
+**v2.1.161**
+・`OTEL_RESOURCE_ATTRIBUTES` 値がメトリクスデータポイントのラベルに含まれるようになり、チームやリポジトリなどのカスタムディメンションで使用メトリクスをスライスできるように
+・`claude agents` の行に、ファンアウト時に `done/total` が詳細の前に表示されるように。ピークは最長実行アイテムを表示
+・`/mcp` でサインインしたことのない claude.ai コネクタが「Show unused connectors」行の背後に折りたたまれるように
+・**並列ツール呼び出し：** 失敗した Bash コマンドが同じバッチ内の他の呼び出しをキャンセルしなくなり、各ツールが独立して結果を返す
+・**フルスクリーンモード：** Linux で利用可能な場合、クリップボードで `wl-copy`/`xclip`/`xsel` を使用。「Reduce motion」設定を尊重するように修正
+・`/usage-credits` が Team および Enterprise 管理者の再ログインを開始するのではなく、組織の使用状況設定ページを指すように修正
+・`/autofix-pr` が git ワークツリーまたは別のリポジトリ内のセッション時に「cannot run on the default branch」を報告するのを修正
+・背景サブエージェント出力が `--output-format text` または `json` 使用時に `claude -p` stdout を破損するのを修正
+・その他多数の修正と改善
+🔗 https://code.claude.com/docs/en/changelog#2-1-161
