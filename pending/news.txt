@@ -1,8 +1,0 @@
-📢 **Anthropic ニュース**
-**Claude Partner NetworkのServices TrackとPartner Hubを発表**
-AnthropicはClaude Partner Networkに新たなServices Trackを導入し、Select・Preferred・Global Premierの3段階の階級制度を設けた。企業の認定者数と本番導入実績に基づいて評価され、大手コンサルティング企業を含む1万人以上がすでに認定資格を取得している。また、パートナーの進捗確認や顧客とのマッチングを支援するClaude Partner Hubポータルも同時に公開された。
-🔗 https://www.anthropic.com/news/services-track-partner-hub
-
-**AIを活用したサイバー脅威の1年間のマッピング調査結果を公開**
-Anthropicは2025年3月から2026年3月の間に禁止した832の悪意あるアカウントを分析し、MITRE ATT&CKフレームワークにマッピングした調査結果を発表した。脅威行為者がマルウェア作成や横展開活動にAIを活用する傾向が強まっており、リスク評価が半年間で33%から56%に増加していることが判明した。既存のMITRE ATT&CKフレームワークはAIエージェント型攻撃の記述が不十分であるとして、AnthropicはMITREと協力してフレームワークの進化を検討している。
-🔗 https://www.anthropic.com/news/AI-enabled-cyber-threats-mitre-attack
