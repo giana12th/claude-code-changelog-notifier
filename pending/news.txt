@@ -1,0 +1,4 @@
+📢 **Anthropic ニュース**
+**Claude Fable 5 と Claude Mythos 5 の発表**
+AnthropicがClaude Fable 5（一般提供）とClaude Mythos 5（サイバー防御者向け制限版）の2つの新モデルを発表した。両モデルはソフトウェアエンジニアリング・医学研究・長時間エージェントタスクなど幅広い分野で最先端の性能を持ち、Mythos 5は高い能力ゆえの悪用リスクに対応した安全保障措置のもとProject Glasswing参加者のみに提供される。価格は入力$10/百万トークン・出力$50/百万トークン。
+🔗 https://www.anthropic.com/news/claude-fable-5-mythos-5
