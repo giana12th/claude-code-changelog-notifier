@@ -1,0 +1,8 @@
+📢 **Anthropic ニュース**
+**Anthropic Public Recordの初回調査結果を公開**
+Anthropicが約52,000人のアメリカ人を対象とした世論調査「Anthropic Public Record」の初回結果を発表。64%がAIによる失業を最大の懸念事項として挙げる一方、48%はがんやアルツハイマー病などの疾患治療への活用に期待を示した。71%が政府によるAI規制の関与を超党派で支持しており、AI日常利用者は失業への懸念が少ない傾向も示された。
+🔗 https://www.anthropic.com/news/anthropic-public-record
+
+**TCSとAnthropicが規制業界向けClaudeパートナーシップを締結**
+Tata Consultancy Services（TCS）とAnthropicが戦略的パートナーシップを発表し、56カ国の従業員50,000名にClaudeを提供する。金融・医療・公共部門など規制が厳しい業界向けのClaudeベース製品を共同開発し、英国の生命保険事業Diligentaでの顧客体験改善やインドのTCS iONでの適性試験運営（年間7,500万件超）などに活用される。
+🔗 https://www.anthropic.com/news/tcs-anthropic-partnership
