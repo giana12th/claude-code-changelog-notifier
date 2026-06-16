@@ -1,0 +1,25 @@
+🔧 **Claude Code アップデート**
+**v2.1.178**
+・パーミッションルールでツールの入力パラメータにマッチする `Tool(param:value)` 構文を追加（`*` ワイルドカード対応）。例：`Agent(model:opus)` で Opus のサブエージェントをブロックできる
+・ネストされた `.claude/skills` ディレクトリ内のSkillが、該当ディレクトリのファイルを操作する際に読み込まれるようになった。名前が衝突した場合、ネストされたSkillは `<dir>:<name>` として表示され、両方とも利用可能なまま残る
+・ネストされた `.claude/` ディレクトリについて：名前が衝突した場合、作業ディレクトリに最も近い agent・workflow・output-style が優先されるようになった。また、project-scopeのworkflow保存先は、最も近い既存の `.claude/workflows/` になる
+・auto modeを改善：サブエージェントの起動前にclassifierによる評価が行われるようになり、サブエージェントがレビューなしにブロック対象のアクションを要求できてしまう抜け穴を解消した
+・`/doctor` を改善：全セクションで一貫したフラットなツリーレイアウトになり、セクションのステータスアイコンが分かりやすくなり、コマンド名がハイライト表示されるようになった
+・Skill一覧の切り詰め警告を改善し、影響を受けるSkillの説明の数を表示するようになった
+・workflowプロンプトのキーワードを変更：紫色のシマーハイライトを使用し、"run a workflow" や "workflow:" のような明示的なフレーズの場合のみトリガーされるようになった（単に単語が含まれているだけでは反応しない）
+・Remote Controlのエラーメッセージを改善：接続失敗時にフッターに赤い "/rc failed" インジケーターが常時表示されるようになり、"not yet enabled" エラーが、gateによるものか、チェック失敗か、古いentitlementか、組織ポリシーによるものかを説明するようになった
+・`/bug` は送信前に説明の入力が必須になり、モデルの拒否応答テキストがGitHub issueのタイトルに使われることがなくなった
+・親プロセスから古いwebsocket/OAuthのfile descriptor環境変数を継承した際にCLIがクラッシュ（out-of-memory）する不具合を修正
+・OAuthトークンがClaude Codeのログインアカウントと異なるアカウントのものである場合に、Claude in Chromeが接続に失敗していても通知されない不具合を修正
+・ディレクトリ修飾名を持つネストされた `.claude/skills` のSkillが、非対話実行時にパーミッションプロンプトでブロックされる不具合を修正
+・サブエージェントに関する複数の不具合を修正：サブエージェントのトランスクリプト表示でツール結果とライブ進捗が表示されるようになり、ターン終了処理中に送信されたメッセージが破棄されなくなり、実行中のサブエージェントをバックグラウンド化（ctrl+b）しても最初からやり直しにならなくなった
+・`ANTHROPIC_BASE_URL` と `ANTHROPIC_AUTH_TOKEN` を使ったカスタムAPIゲートウェイのシェルからdaemonを起動した場合に、`claude agents` のworkerが `401 Invalid bearer token` で失敗する不具合を修正
+・compactionが `--fallback-model` を考慮していなかった不具合を修正：overloadやmodel-availabilityエラー発生時に、設定済みのfallback modelチェーンにフォールバックするようになった
+・セッション外で認証情報がリフレッシュされた後も、古いキャッシュ済みリクエスト設定が原因でモデルへのリクエストが認証エラーで失敗し続けていた不具合を修正
+・ターン終了後に `/bg` または `←←` で作成されたバックグラウンドセッションが、agents一覧で永久に "Working" と表示され続ける不具合を修正
+・`CLAUDE_CODE_PLUGIN_KEEP_MARKETPLACE_ON_FAILURE=1` が新規のmarketplaceインストールのクローンを妨げてしまう不具合を修正
+・サブエージェントの `disallowedTools` におけるMCPサーバーレベルの指定（`mcp__server`、`mcp__server__*`、`mcp__*`）が、通知なく無視されてしまう不具合を修正
+・vim modeのundoを修正：`u` が、すばやく連続して実行されたコマンドを1つのundoステップにまとめてしまうことなく、NORMAL/VISUALモードのコマンドを1つずつ辿るようになった
+・`claude agents` 内でクリックした際に、カスタムURIスキーム（例：`vscode://`）を持つstatuslineのリンクが開かない不具合を修正
+・[VSCode] CJK IMEの候補ウィンドウを閉じるためにEscを押すと、実行中のClaudeタスクがキャンセルされてしまう不具合を修正
+🔗 https://code.claude.com/docs/en/changelog#2-1-178
