@@ -1,5 +1,0 @@
-📢 **Anthropic ニュース**
-**Anthropic、ソウルオフィスを開設し韓国のAIエコシステムと新たなパートナーシップを発表**
-Anthropicはソウルオフィスを正式に開設し、韓国のAIエコシステム各社との複数のパートナーシップを発表した。オフィスは30年の技術リーダーシップ経験を持つKiYoung Choi氏が率いる。
-NAVER、Nexon、LG CNS、Hanwha Solutions、Samsung SDS、Channel Corpなど主要企業がClaude CodeやClaudeを業務に導入したほか、National AI Research Lab（NAIRL）との学術連携や、Good Neighbors Koreaでの非営利活動支援、Claude for Startupsプログラムの韓国展開など、開発者コミュニティ支援も発表された。
-🔗 https://www.anthropic.com/news/seoul-office-partnerships-korean-ai-ecosystem
