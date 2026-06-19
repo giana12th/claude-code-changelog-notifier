@@ -1,0 +1,20 @@
+🔧 **Claude Code アップデート**
+**v2.1.183**
+・auto modeの安全性を改善：ローカルの変更を破棄するよう依頼していない場合、破壊的なgitコマンド（`git reset --hard`、`git checkout -- .`、`git clean -fd`、`git stash drop`）がブロックされるようになった。`git commit --amend`は、そのコミットが今回のセッションでエージェントによって作成されたものでない場合にブロックされる。`terraform destroy`/`pulumi destroy`/`cdk destroy`は、特定のスタックを指定して依頼していない限りブロックされる
+・リクエストされたモデルが非推奨、または新しいモデルに自動更新された場合の警告を追加。print mode（`-p`）ではstderrに表示され、agent frontmatterで設定されたモデルもカバーするようになった
+・`attribution.sessionUrl`設定を追加。webおよびRemote Controlセッションでのcommitとpull requestからclaude.aiのセッションリンクを省略できるようになった
+・`/config --help`を追加。`/config key=value`で使用可能な省略キーの一覧を表示する
+・`/config`のトグル動作を変更：EnterとSpaceの両方で選択した設定を変更できるようになり、Escは設定を元に戻す代わりに保存して閉じるようになった
+・起動時にロゴの下に表示されていた「setup issues」の行を削除。設定の問題を確認するには`/doctor`を実行するか`--debug`を使用する
+・影響を受ける設定において、subagentの起動やsession-title生成時に発生していた`thinking.disabled.display: Extra inputs are not permitted`という400エラーを修正
+・subagent内でWebSearchが空の結果を返す問題を修正
+・native cursorを有効にした状態でvim modeで履歴を移動した際、ターミナルのカーソルがプロンプトの上に取り残される問題を修正
+・Windows Terminalでnested-subagentの負荷が高い状況下で発生していたfullscreen TUIの表示崩れ（statuslineが画面中央に表示される、spinnerの行が重複する、テキストが結合される）を修正
+・モデルがthinking blockのみを返した際にターンが表示内容なしで静かに完了してしまう問題を修正。Claudeは1回だけ再プロンプトするようになった
+・複数のpluginが有効な場合に、user-level skillsがslash-commandの自動補完に複数回表示される問題を修正
+・headless/SDK modeにおいて、認証が必要なMCPサーバーがauth-stubのツールをモデルに公開してしまう問題を修正
+・shellのrc-file初期化が遅い場合にtmux teammateのpaneが起動に失敗する問題、およびagent起動中に入力したキー操作がleader promptではなく新しいtmux paneに漏れてしまう問題を修正
+・teammateが開始したbackground taskが、そのteammateのターン完了時にkillされてしまう問題を修正
+・scheduled taskとwebhook triggerの配信がキーボード入力として扱われてしまう問題を修正。これらはtask notificationとして分類されるようになり、auto modeにおいてpendingのアクションを承認したりsession titleを設定したりできなくなった
+・focus modeで各レスポンスの下に「Ran N PostToolUse hooks」というタイミング行が表示される問題を修正
+🔗 https://code.claude.com/docs/en/changelog#2-1-183
