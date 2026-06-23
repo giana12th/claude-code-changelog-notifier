@@ -1,0 +1,4 @@
+📢 **Anthropic ニュース**
+**Slack統合のチームコラボレーション機能「Claude Tag」を発表**
+AnthropicはSlackに統合されたAIアシスタント機能「Claude Tag」を発表した。チームメンバーが「@Claude」とタグ付けするだけでタスクを委譲でき、チャンネル内の複数ユーザーが同一のClaudeと非同期で協力作業ができる。Claudeはチャンネルの文脈を学習して進捗のない案件を自動追跡するなど自発的に行動し、社内導入ではプロダクトチームのコードの65%をClaudeが生成している。現在Claude Enterprise/Teamの顧客向けにベータ版として提供が開始された。
+🔗 https://www.anthropic.com/news/introducing-claude-tag
