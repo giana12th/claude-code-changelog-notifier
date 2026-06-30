@@ -1,8 +1,0 @@
-📢 **Anthropic ニュース**
-**Claude Sonnet 5 発表**
-AnthropicはSonnetシリーズで最もエージェント的な能力を持つ新モデルClaude Sonnet 5を発表した。前世代（Sonnet 4.6）より推論・ツール使用・コーディング・知識業務が大幅に向上し、Opus 4.8に近いパフォーマンスを低価格で提供する。導入期間（〜2026年8月31日）は入力$2/百万・出力$10/百万トークンで、Free・Pro・Max・Team・Enterprise全プランで利用可能。
-🔗 https://www.anthropic.com/news/claude-sonnet-5
-
-**科学者向けAIワークベンチ「Claude Science」がベータ公開**
-AnthropicはPubMed・Jupyter・Rなど60以上のツール・データベースと統合した科学者向けAIワークベンチ「Claude Science」をベータ版で公開した。研究者が複数プラットフォームを横断する非効率性の解消を目的とし、再現可能な成果物の生成や引用・計算を検証する査読エージェント機能も搭載。Pro・Max・Team・EnterpriseユーザーがmacOS・Linuxで利用可能で、最大$30,000のクレジット支援プログラムも実施中。
-🔗 https://www.anthropic.com/news/claude-science-ai-workbench
