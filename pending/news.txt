@@ -1,4 +1,0 @@
-📢 **Anthropic ニュース**
-**USTがClaudeを物理的AIに展開**
-Anthropicはテクノロジー・エンジニアリング企業USTとパートナーシップを締結し、半導体検証やファクトリー運用などの物理的AI分野にClaudeを統合すると発表した。USTのプラットフォーム「iDEC」ではClaude Codeがハードウェア設計の読み込みや回帰テストの生成・実行、不具合検出を担い、検証サイクルを50〜70%短縮（標準4日→48時間）している。USTの2万人のエンジニアがClaudeのトレーニングを受け、Claude Partner Networkのグローバル・プレミア・パートナーに認定されたほか、医療・通信・銀行分野への展開も進めている。
-🔗 https://www.anthropic.com/news/ust-claude
