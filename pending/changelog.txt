@@ -1,0 +1,30 @@
+🔧 **Claude Code アップデート**
+**v2.1.206**
+・`/cd` にディレクトリパス候補表示を追加（`/add-dir` と同じ挙動）
+・`/doctor` にチェック項目を追加：コミット済みの `CLAUDE.md` のうち、Claude がコードベースから推測できる内容の削除を提案する
+・`/commit-push-pr` がリポジトリの設定済み push remote（`remote.pushDefault`、または唯一のリモート）への `git push` を自動許可するように変更（`origin` に加えて対応）
+・Gateway: `/login` が Anthropic 公式パブリック gateway エンドポイントをサポート
+・`EnterWorktree` がプロジェクトの `.claude/worktrees/` 外の git worktree に入る前に確認を求めるよう変更
+・Background agents が Claude Code アップデート直後にバックグラウンドで新バージョンへアップグレードするように変更（attach 時の低速アップグレードを解消）
+・ログイン期限切れ時に全モデルで「There's an issue with the selected model」という誤解を招くエラーが表示されていた問題を修正（`/login` の実行を促すよう変更）
+・`claude --resume` および `--continue` の起動時にキーボード入力が反応しなかった問題を修正
+・`--mcp-config` や `.mcp.json` で設定した MCP servers がサーバーごとの `request_timeout_ms` を無視し、新規セッションで60秒のデフォルトでタイムアウトしていた問題を修正
+・`CLAUDE_CODE_EXTRA_BODY` が `claude agents` / `--bg` バックグラウンドワーカーで無視されていた問題を修正（shell-exported override がディスパッチセッションに引き継がれるよう変更）
+・OAuth MCP servers がトークンリフレッシュ1回の失敗後に手動再認証を要求していた問題を修正
+・`--permission-prompt-tool` が MCP server を参照している場合、コールドスタート時にサーバー接続完了前に「MCP tool not found」でクラッシュしていた問題を修正
+・`/model` ピッカーで表示モデル名と異なるモデルの価格が表示されていた問題を修正、ファーストパーティの価格を請求しないプロバイダーへの価格表示を廃止
+・エンタイトルメントやアロウリスト制限で参照先行が削除された場合に、`/model` ピッカーでサーバー提供のモデル行が誤った位置に表示されていた問題を修正
+・slash command 送信後にデスクトップセッションがターン中に「running」のまま固まる問題を修正
+・Windows で `claude --resume` 実行時にセットアッププロンプトが先に表示された場合、agents ビューでキーボード入力が無視されていた問題を修正
+・`claude rm` で削除したジョブがデーモンリスターに残り `claude agents` で再表示される問題を修正
+・ログアウト状態で `/remote-control` が「Unknown command」を表示していた問題を修正（サインイン方法を案内するよう変更）
+・ワークフロー詳細ビューで左矢印キーによるフェーズ/エージェントの戻り操作ができなかった問題を修正
+・`/status` に壊れたインストールの警告が2回表示されていた問題を修正
+・LSP plugins に対して誤った「disused plugin」ヒントが表示され、disuse telemetry が歪んでいた問題を修正
+・`/doctor` のアップデートチェックで Homebrew インストールが cask のチャンネルと比較されるように修正（settings channel との比較を廃止）
+・フルスクリーンのジャンプ・トゥ・ボトムのボタンが macOS で「Ctrl+End」と表示したり、リバインド済みキーコードを表示しなかったり、トランスクリプトに重なって表示されたりしていた問題を修正
+・Bedrock: `awsCredentialExport` ヘルパーを egress 制限ネットワークで使用した際に数分のスタートアップハングが発生していた問題を修正
+・`claude-opus-4-8` での `/code-review` の検出品質をすべての effort レベルで改善
+・agents ビューを改善：status カラムが64文字で切り捨てられず、ターミナルの全幅を使用するように変更
+・agents ビューを変更：Ctrl+X で完了済みセッションを完全削除可能になり、セッションが2回レンダリングされなくなった。削除済みバックグラウンドジョブは削除済みとして保持される
+🔗 https://code.claude.com/docs/en/changelog#2-1-206
