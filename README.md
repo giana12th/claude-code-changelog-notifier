@@ -8,8 +8,8 @@ Anthropicの一次情報（Changelog / News / Research / Engineering Blog）を�
 |---------|------|---------------------|
 | A | Claude Code Changelog | 毎日 6:00 |
 | B | Anthropic News | 毎日 7:00 |
-| C | Anthropic Research | 月・水・金 14:00 |
-| D | Engineering Blog | 月・木 14:30 |
+| C | Anthropic Research | 月・水・金 15:00 |
+| D | Engineering Blog | 月・金 15:30 |
 
 新着がない日は投稿しない。
 

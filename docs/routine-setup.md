@@ -125,8 +125,8 @@ Discord 投稿は GitHub Actions（`.github/workflows/discord-notify.yml`）が�
 | プロンプト | `routines/research.md を読んで実行してください。` |
 | リポジトリ | このリポジトリ |
 | Environment | anthropic-notifier |
-| スケジュール | 月・水・金 / 05:00 UTC（14:00 JST） |
-|cron式(UTC)|0 5 * * 1,3,5|
+| スケジュール | 月・水・金 / 06:00 UTC（15:00 JST） |
+|cron式(UTC)|0 6 * * 1,3,5|
 | Connectors | すべて外す |
 
 ---
@@ -139,8 +139,8 @@ Discord 投稿は GitHub Actions（`.github/workflows/discord-notify.yml`）が�
 | プロンプト | `routines/engineering.md を読んで実行してください。` |
 | リポジトリ | このリポジトリ |
 | Environment | anthropic-notifier |
-| スケジュール | 月・木 / 05:30 UTC（14:30 JST） |
-|cron式(UTC)|30 5 * * 1,5|
+| スケジュール | 月・金 / 06:30 UTC（15:30 JST） |
+|cron式(UTC)|30 6 * * 1,5|
 | Connectors | すべて外す |
 
 ---
@@ -165,7 +165,7 @@ Discord 投稿は GitHub Actions（`.github/workflows/discord-notify.yml`）が�
 |---------|-----|-----|------|
 | A Changelog   | 21:00 | 6:00  | 毎日 |
 | B News        | 22:00 | 7:00  | 毎日 |
-| C Research    | 05:00 | 14:00 | 月・水・金 |
-| D Engineering | 05:30 | 14:30 | 月・木 |
+| C Research    | 06:00 | 15:00 | 月・水・金 |
+| D Engineering | 06:30 | 15:30 | 月・金 |
 
 > Web画面の時刻入力がローカルタイムゾーン換算される場合は要確認。

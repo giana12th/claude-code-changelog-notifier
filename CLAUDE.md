@@ -140,5 +140,5 @@ git commit -m "notify: changelog 2.1.91"
 |---------|------|-----|-----|------|
 | A | Changelog   | 21:00 | 6:00  | 毎日 |
 | B | News        | 22:00 | 7:00  | 毎日 |
-| C | Research    | 05:00 | 14:00 | 月・水・金 |
-| D | Engineering | 05:30 | 14:30 | 月・木 |
+| C | Research    | 06:00 | 15:00 | 月・水・金 |
+| D | Engineering | 06:30 | 15:30 | 月・金 |
