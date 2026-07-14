@@ -1,8 +1,0 @@
-📢 **Anthropic ニュース**
-**教師向けClaudeの紹介**
-Anthropicが、米国のK-12教育者向けにプレミアム機能と教学支援ツールを無料提供する「Claude for Teachers」を発表しました。差別化指導や習熟度別学習など実証済みの教育実践を支援することを目的とし、学習基準・教育課程との連携や授業計画作成、学習者に応じた教材調整、クラスデータ分析などの機能を提供します。ASSISTmentsやBrisk Teachingなど9つの教育ツールとも統合されており、K-12教育エコシステム全体での活用が可能です。
-🔗 https://www.anthropic.com/news/claude-for-teachers
-
-**AnthropicがカナダのAI研究に1000万ドルをコミット**
-Anthropicは、カナダの主要AI研究機関8か所に対し、合計1000万カナダドルの資金提供とClaudeのクレジット提供を発表しました。Alberta Machine Intelligence Institute、Mila、Vector Instituteなど深層学習研究の歴史的拠点を含む機関や医療・精神衛生分野の研究機関が対象となり、責任ある有益なAI応用の研究を支援します。また、カナダは世界で8番目にClaudeの利用率が高い国であることも公開されました。
-🔗 https://www.anthropic.com/news/canadian-ai-research
