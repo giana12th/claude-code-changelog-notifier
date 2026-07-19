@@ -1,0 +1,4 @@
+🔧 **Claude Code アップデート**
+**v2.1.215**
+・ `/verify` および `/code-review` スキルを Claude が自動実行しなくなった。使いたい場合は `/verify` または `/code-review` で明示的に呼び出す
+🔗 https://code.claude.com/docs/en/changelog#2-1-215
