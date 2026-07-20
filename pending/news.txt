@@ -1,0 +1,4 @@
+📢 **Anthropic ニュース**
+**Anthropic、希少疾患研究向けAI for Scienceグラントプログラムを開始**
+AnthropicはAI for Scienceイニシアチブの一環として、希少遺伝性疾患研究者向けのグラントプログラムを開始した。採択者には6ヶ月間で最大5万ドル相当のClaude APIクレジットが提供され、「基礎科学パートナーシップ」と「バイオテックパートナーシップ」の2トラックから応募できる。世界で推定4億人が罹患する7,000以上の希少疾患に対し、文献合成・パターン検出・情報抽出へのAI活用を通じた研究加速を目指す。応募締め切りは2026年8月2日（PST）。
+🔗 https://www.anthropic.com/news/rare-disease-research-grants
