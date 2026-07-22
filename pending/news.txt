@@ -1,0 +1,12 @@
+📢 **Anthropic ニュース**
+**経済未来研究基金のリサーチアジェンダを発表**
+AnthropicがAIの経済的影響に備えるための外部研究を支援する2億ドルの「Economic Futures Research Fund」の研究アジェンダを発表した。職場でのAI統合、労働者の転職支援、所得保障制度の近代化、AI利益の分配、公共投資の効果性の5つの領域に焦点を当て、大学や研究機関から500万〜3000万ドル規模の提案を募集している。大規模なランダム化対照試験などを通じ、AI変革後の経済で実際に機能する介入策の証拠収集を目指している。
+🔗 https://www.anthropic.com/news/economic-futures-research-fund-agenda
+
+**Claudeで「Anthropic Economic Index」を直接照会できる新コネクタを公開**
+AnthropicはClaude向けに経済指数データへ直接アクセスできるコネクタを公開した。ユーザーはclaud.aiのコネクタメニューからインストール不要で有効化でき、特定の職業や地域でのAI利用傾向などを自然言語でClaudeに質問できる。このインデックスはClaudeの実際の利用データに基づいており、研究者・ジャーナリスト・政策立案者が経済へのAIの影響を把握するための参考情報として活用できる。
+🔗 https://www.anthropic.com/news/anthropic-economic-index-connector
+
+**Public First Actionへ2000万ドルを追加寄付、累計4000万ドルに**
+AnthropicはAI政策の公教育を目的とする非党派団体Public First Actionに2000万ドルを追加寄付し、2026年2月の初回寄付から累計4000万ドルの支援となった。同社は急速に進化するAI技術に対応するため、安全性テスト、透明性要件、高リスクモデルの展開制限権限などを含む強化された規制枠組みが必要だと主張している。この寄付は選挙活動ではなく政策教育・研究支援のみを対象としている。
+🔗 https://www.anthropic.com/news/donation-public-first-action
