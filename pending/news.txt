@@ -1,0 +1,4 @@
+📢 **Anthropic ニュース**
+**Claude で Anthropic Economic Index のデータを探索できるコネクタが登場**
+AnthropicがClaude用のコネクタをリリースし、Anthropic Economic IndexのデータセットをClaude会話に統合した。「どの職種がAIを最も使っているか？」などの自然言語での質問に答えることができ、claude.aiのコネクタメニューからインストール不要で全Claudeモデルで利用できる。このIndexはClaudeの実際の利用パターンを反映しており、研究者・ジャーナリスト・政策立案者に有益なデータを提供する。なお、Indexの内容はClaudeの利用状況であり、より広い労働市場全体を示すものではない点に注意が必要。
+🔗 https://www.anthropic.com/news/anthropic-economic-index-connector
