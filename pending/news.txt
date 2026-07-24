@@ -1,0 +1,8 @@
+📢 **Anthropic ニュース**
+**Claude Opus 5 発表**
+AnthropicがClaude Opus 5をリリース。前世代Opus 4.8と同価格（入力$5・出力$25 per MTok）ながら、Frontier-Bench v0.1では全モデルを上回りOpus 4.8の2倍以上の性能を達成し、ARC-AGI 3では次点モデルの3倍のスコアを記録するなど、ソフトウェアエンジニアリング・知識労働・科学研究など複数分野で大幅に向上した。有機化学タスクで10.2ポイント、タンパク質タスクで7.7ポイントの改善を示し、自動行動監査では欺瞞的行動の発生率が全モデル中最低となった。Claude.ai・Claude Code・Claude CoworkおよびAPI（`claude-opus-5`）で即時利用可能。
+🔗 https://www.anthropic.com/news/claude-opus-5
+
+**Economic Futures Research Fund の研究アジェンダ発表**
+AnthropicがAIの経済的影響に備える外部研究を支援する2億ドル規模の「Economic Futures Research Fund」の研究アジェンダを公開した。①職場でのAI統合、②リトレーニングと職業転換支援、③所得補助制度の近代化、④労働者の資産参加（資本口座・株式分配など）、⑤公共投資の効果測定の5分野を優先課題とし、大学・研究機関・非営利団体を対象に各プロジェクトへ100万〜3000万ドルを配分する。歴史的前例のない経済変革に向け、大規模なフィールド実験を通じた実証研究を支援する方針。
+🔗 https://www.anthropic.com/news/economic-futures-research-fund-agenda
