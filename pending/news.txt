@@ -1,0 +1,8 @@
+📢 **Anthropic ニュース**
+**オープンウェイトモデルに関するAnthropicの立場**
+AnthropicのCEO Dario Amodeiが、オープンウェイトモデルへの保護主義的な禁止措置には反対するとのポジションを表明した。その代わりとして、中国への半導体・製造装置の輸出規制、大規模な蒸留操作への取り締まり、十分な能力を持つ全モデルへの安全テスト義務付けという3つの政策を支持している。オープンウェイトの可否は権威主義政府によるAI軍事利用の問題には「無関係」であり、サイバー攻撃や生物兵器悪用への懸念に対してのみ限定的に関連するとした。
+🔗 https://www.anthropic.com/news/position-open-weights-models
+
+**CognizantとAnthropicがエンタープライズ向けClaudeの提供でパートナーシップを拡大**
+CognizantとAnthropicが提携を強化し、Claude AIをエンタープライズ全体に展開する。CognizantはClaudeのGlobal Premier Partnerとなり、3万人以上のアソシエイトへのトレーニングを完了しているほか、Flowsource・Neuro AI Engineeringなど社内プラットフォームへの統合を進めている。契約審査時間の最大40%削減や引受け業務の大幅な効率化など具体的な成果も生まれており、製造業・ライフサイエンス・保険分野でのAI本番運用の加速を目指す。
+🔗 https://www.anthropic.com/news/cognizant-anthropic
