@@ -1,0 +1,10 @@
+🔬 **Anthropic Research**
+**暗号学的弱点をClaudeで発見** `Frontier Red Team`
+
+AnthropicのFrontier Red Teamが、最新AIモデル「Claude Mythos Preview」を用いて暗号アルゴリズムの数学的弱点を自律的に発見する研究を実施した。対象は量子耐性デジタル署名方式HAWKとAES（高度暗号化標準）の削減版（7ラウンド版）の2つ。
+
+HAWKに対しては「格子同型問題（lattice isomorphism problem）」と呼ばれる数学的対称性（非自明な自己同型）を発見し、実効鍵サイズを半分に削減する改善攻撃を約60時間で開発した。AES削減版に対しては「メビウスブリッジ」という新しい指紋認証アルゴリズムを考案し、既存の最良攻撃より200〜800倍高速化することに成功した。
+
+いずれの結果も現在のコンピュータシステムへの実用的な影響はなく、HAWKは未配備の候補であり、AES攻撃も削減版に限定される。重要なのは、AIが専門家レベルの暗号数学研究を自律的に実施できることを初めて実証した点にある。評価ベンチマーク「CryptanalysisBench」も開発され、発見は学術界・政府・業界と責任ある形で共有された。言語モデルの能力の急速な進化に対する警告としての意味も持つ。
+
+🔗 https://www.anthropic.com/research/discovering-cryptographic-weaknesses
