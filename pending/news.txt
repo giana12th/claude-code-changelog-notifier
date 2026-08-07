@@ -1,0 +1,4 @@
+📢 **Anthropic ニュース**
+**Fable 5のバイオロジー安全対策の改善**
+AnthropicはFable 5のバイオロジー関連クエリに対する安全分類器を改善し、false positivesを約85%削減しました。この更新により、ユーザーは健康教育や臨床タスクなど一般的なバイオロジー関連質問についてFable 5のサポートを受けられるようになります。ただし、ウイルス学や分子設計などのデュアルユース研究については引き続きOpus 5にフォールバックされます。
+🔗 https://www.anthropic.com/news/improving-fable-5-s-biology-safeguards
