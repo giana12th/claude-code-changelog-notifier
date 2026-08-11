@@ -1,0 +1,8 @@
+🔧 **Claude Code アップデート**
+**v2.1.227**
+・ログイントークンが期限切れの状態でセッション開始した際、ユーザーのサブスクリプションティアを考慮せずにfeature flagが評価されるバグを修正。Max planユーザーに対してFableのusage creditsの有効化を誤って促す問題があった
+・GitHub-hosted runners上で `allowed_non_write_users` を設定した `claude-code-action` において、すべての Bash コマンドが失敗するバグを修正
+・`/tui` が最初のメッセージより前まで巻き戻されたconversationを復元してしまうバグを修正
+・スラッシュコマンドメニューを改善：選択行のみ青でハイライト表示、マッチした文字は色変更ではなく太字で表示、絵文字やアクセント付き名前のグリフを正しく維持
+・パフォーマンスを改善：ファイル未検出サジェスチョンおよびat-mentionサイズチェック時のevent-loopストールを削減
+🔗 https://code.claude.com/docs/en/changelog#2-1-227
