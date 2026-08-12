@@ -1,0 +1,12 @@
+🔬 **Anthropic Research**
+**Claudeの数学的能力をさらに探る** `Science / Mathematics`
+
+Anthropicの研究チームが、Claudeが数学の有名な未解決問題「リーマン予想」に取り組む過程で、予期せぬ成果を上げたことを報告した。
+
+リーマン予想そのものは1859年以来未解決のままだが、Claudeはその関連問題であるリーマンゼータ関数（Riemann zeta function）の零点（zeros）に関する下限を41.6%から67.2%へと大幅に改善することに成功した。
+
+この成果は、研究版のClaudeが2セッションにわたり3,100万トークンを出力し、約60個のサブエージェントを協調させながら導き出した。最初は650件の失敗アイデアを生成した後、Baluyot・Goldston・Suriajaya・Turnage-Butterbaughらの研究とBombieriの先行研究を独自の方法で組み合わせることで突破口を開いた。人間の数学者の主な貢献は「続けろ」という励ましであり、ほぼClaudeが自力で達成した。
+
+証明はLean形式で記述され、複数のサブエージェントによる独立した再検証も経た。AIが既存の数学研究を拡張し、実際に知見を生み出せる可能性を示した重要な事例となった。
+
+🔗 https://www.anthropic.com/research/riemann-zeta
