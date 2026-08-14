@@ -1,0 +1,4 @@
+📢 **Anthropic ニュース**
+**Claudeのテキスト透かし技術の仕組み**
+AnthropicはEU AI Actへの対応として、Claudeが生成・編集したテキストに見えない透かしを組み込む機能を発表した。Google DeepMindのSynthID-Textを応用し、暗号鍵を使って単語選択の傾向に統計的パターンを埋め込むことで、出力品質や処理コストを変えずにClaude関与の可能性を検出できる。ユーザーの個人情報は一切含まれず、近日中に透かし検出APIの提供も予定されている。
+🔗 https://www.anthropic.com/news/claude-text-watermark
