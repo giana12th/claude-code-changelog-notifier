@@ -1,0 +1,23 @@
+🔧 **Claude Code アップデート**
+**v2.1.233**
+・GitLab のマージリクエスト URL サポートを `--worktree` フラグと `claude agents` ビューに追加（MR は `!N` と表示される）
+・Anthropic アップストリームの apps gateway に opt-in の `forward_user_identity` 設定を追加。サインイン済みユーザーのアイデンティティをヘッダーとして送信し、ゲートウェイ背後のプロキシがユーザーごとに消費量を帰属できる
+・Linux 上の Bash ツールコマンドに opt-in のメモリ cgroup サポートを追加（`CLAUDE_CODE_TOOL_MEMORY_LIMIT`）。暴走したビルドがセッションを停止させないようにする
+・WebFetch セッション URL キャッシュの TTL を設定する環境変数 `CLAUDE_CODE_WEBFETCH_CACHE_TTL_MS` を追加（デフォルトは変更なし: 15 分）
+・Claude がパーミッションプロンプトを待機中に環境がシャットダウンした場合、クラウドセッションが「失われた」と誤判定されることがある問題を修正
+・固定タイムアウトでの長期接続を切断するサーバー（サーバーレスホスト等）に対して MCP v2 接続が subscriptions/listen ストリームを無限に再オープンする問題を修正
+・Claude Desktop または VS Code で実行時、パーミッションプロンプトで Notification フックが発火しない問題を修正
+・サンドボックスが有効な場合、Linux 上のアイドルセッションが CPU コアを 100% 使用し続けることがある問題を修正
+・ユーザーまたはプロジェクトのスキルが組み込みスキルを上書きした場合、`/checkup` や `/review` などの組み込みスキルエイリアスが `-p` モードまたはプラグイン/MCP ロード時に「Unknown command」と報告する問題を修正
+・引数値がテンプレートマーカーとして再展開されないよう、スキル/コマンドの引数置換を修正
+・Windows のパスが NT `\??\` デバイスプレフィックスを使用した場合に UNC パス検証をバイパスする問題を修正（NTLM 認証情報リークベクター）
+・`claude self-hosted-runner` のセッション開始時間を改善：セッションブランチがワーキングツリーを書き換えずに作成されるようになり、2 回のサーバーラウンドトリップがエージェントの起動をブロックしなくなった
+・apps gateway のエラー転送を改善：Vertex、Foundry、AWS 上の Claude Platform アップストリームからの 400/413 エラーが上流自身のメッセージを含むようになった。apps gateway での auto-compact のバグも修正
+・`claude plugin validate` を改善し、ベアの `.claude/skills` ディレクトリをチェックするようになった。フロントマターの解析に失敗する SKILL.md ファイルを報告する
+・スクリーンリーダーモードを改善：`/effort` セレクターが番号付きリストと数字入力プロンプトとして表示されるようになり、ヒントとダイアログテキストが切り取られなくなった
+・プリントモードの診断を改善：Claude Code が認識しないモデル ID のリクエスト送信時に `[claude-code:unrecognized_model]` が stderr に書き出される。`modelOverrides` でマッピングすると警告を消せる
+・GitHub アプリのセットアップヒントが、origin リモートが gitlab.com または bitbucket.org のリポジトリには表示されなくなった。エンタープライズマーケットプレイスのヒントが GitHub 以外の内部 git ホストもカバーするようになった
+・タスクトラッキングツール（TaskCreate/Get/Update/List、TodoWrite）が Opus 4.8、Sonnet 5、Fable 5、Mythos 5 以降のモデルで利用不可になった。`CLAUDE_CODE_ENABLE_TODO_TOOLS=1` を設定すると再び使用できる
+・Windows：通常の `cd <dir> && <command> > file` Bash コマンドで auto モードが繰り返し手動承認を求める問題を修正（2.1.232 のリグレッション）
+・Windows の Cygwin スタイルシンボリックリンクと入力リダイレクション（`< file`）に関する 2.1.232 の Bash パーミッション変更を差し戻し。より絞り込んだバージョンが後のリリースで戻る予定
+🔗 https://code.claude.com/docs/en/changelog#2-1-233
