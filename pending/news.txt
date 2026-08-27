@@ -1,0 +1,8 @@
+📢 **Anthropic ニュース**
+**モデルハードウェア標準（MHS）のリサーチプレビュー公開**
+AnthropicはAIエージェントが実験室・製造設備を安全に操作するための共通仕様「Model Hardware Standard（MHS）」のリサーチプレビューを開始した。MHSは標準化されたドライバーとModel Context Protocol（MCP）・CLI・コードAPIを通じた制御機構により、機器統合にかかる時間を数週間〜数ヶ月から数時間に短縮する仕組みで、Genentech・University of Washington・Carnegie Mellonなど6機関で実証が行われた。将来的にはオープンソース化が予定されており、AWS・Tecan・QIAGEN・Universal RobotsなどのハードウェアベンダーがすでにMHS対応を進めている。
+🔗 https://www.anthropic.com/news/model-hardware-standard-research-preview
+
+**科学者向けサポートの拡充**
+Anthropicは研究者コミュニティへの支援を大幅に拡充し、世界中の研究者に向けてClaude Teamプランの10,000席を1年間、スタンダード席は無償・プレミアム席は月$15で提供する。対象は学術・非営利機関の主任研究者（PI）およびその研究室メンバーで、「AI for Science」プログラムも生命科学以外の分野に拡充され、1プロジェクトあたり最大$50,000相当のコンピュートクレジットを助成する。
+🔗 https://www.anthropic.com/news/expanding-support-for-scientists
