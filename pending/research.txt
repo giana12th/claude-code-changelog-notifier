@@ -1,0 +1,10 @@
+🔬 **Anthropic Research**
+**Claudeの利用データを活用した外部独立研究の推進** `AI Policy / Oversight`
+
+Anthropicは、外部研究者がClaudeの実際の利用データを用いて独立研究を行えるプログラムを試験的に実施した。Stanford SALT Lab・Oxford Human Information Processing Lab・METRの3機関が参加し、2026年4〜5月の約25万件の会話をプライバシーを保護した集計データのみで分析した。
+
+主な発見として、「Claudeとの会話の過半数で、ユーザーが重要なタスクをAIに委任していた」ことが明らかになった。ユーザーはClaudeの出力をそのまま受け入れるのではなく、方向を示しながら活用する傾向があり、適度な摩擦が良い成果につながることも示された。また、ユーザーの感情状態とClaudeの応答パターンの相関や、新モデルによるコーディング速度の大幅向上も確認された。3機関の集計データはHugging Faceで公開された。
+
+外部研究者がAI企業の利用データを用いた独立研究を公表したのは初めてであり、プライバシーを保ちつつAIの社会的影響を第三者が検証できることを示した。AI監視の外部モデル確立に向けた重要な一歩となる。
+
+🔗 https://www.anthropic.com/research/enabling-independent-research
