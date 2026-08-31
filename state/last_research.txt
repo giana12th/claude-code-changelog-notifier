@@ -1,1 +1,1 @@
-https://www.anthropic.com/research/enabling-independent-research
+https://www.anthropic.com/research/automated-researchers-mitigate-alignment-failures
