@@ -1,0 +1,7 @@
+🔧 **Claude Code アップデート**
+**v2.1.252**
+・一部のMacでBashコマンドが「task output swap refused (tasks dir moved or linked)」エラーで失敗する問題を修正
+・`.claude/settings.local.json` がまだ存在しないプロジェクトで「always allow」が保存されない問題を修正
+・claude.aiへの接続が低下した際、Claude DesktopまたはVS CodeがホストするRemote Controlセッションがツール完了後に数分間スタックする問題を修正
+・非常に大量の失敗出力（例：ディスクフル時のgitエラー）を含むバックグラウンドタスク通知によって会話がAPIリクエストサイズ制限を超過する問題を修正
+🔗 https://code.claude.com/docs/en/changelog#2-1-252
