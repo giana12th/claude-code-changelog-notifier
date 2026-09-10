@@ -1,8 +1,0 @@
-📢 **Anthropic ニュース**
-**AIの悪用の検出と対抗：2026年9月レポート**
-Anthropicは、2025年12月から2026年8月にかけてClaudeを悪用した脅威グループの活動を記録した脅威インテリジェンスレポートを公開した。サイバー作戦・影響工作・詐欺など7つのカテゴリーにわたる複数のグループが確認され、AIが高度な攻撃の「民主化」をもたらし、個人のハッカーが以前は大規模チームが必要だった洗練された攻撃を実行できるようになっていることが示された。Anthropicは早期検出と業界全体の防御強化を目的に、こうしたレポートを定期的に公開している。
-🔗 https://www.anthropic.com/threat-intelligence-report-september-2026
-
-**Claude Fable 5.1 と Claude Mythos 5.1 の発表**
-AnthropicがコーディングおよびAI知識作業向けの最先端モデル「Claude Fable 5.1」と「Claude Mythos 5.1」を発表した。Fable 5.1は前世代比25%のコスト削減を実現しながら分子設計やGPU最適化などの科学分野で卓越した成果を示し、Enterprise Frontier Safeguards（EFS）によるゼロ知識データ保持機能も提供される。Mythos 5.1はサイバーセキュリティおよびライフサイエンス分野の専門家向けに限定提供され、検証プログラムを通じたアクセス管理が行われる。
-🔗 https://www.anthropic.com/claude-fable-and-mythos-5-1
