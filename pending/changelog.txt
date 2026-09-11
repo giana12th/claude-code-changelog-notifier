@@ -1,0 +1,33 @@
+🔧 **Claude Code アップデート**
+**v2.1.269**
+・`claude plugin eval` を追加：プラグインの eval スイートを Claude Code に対して実行し、スコア付きで再現可能な結果（JSON + HTML レポート）を取得できる
+・`/output-style [name]` を追加：Remote Control およびクラウド/ヘッドレスセッションでの出力スタイル一覧表示と切り替えが可能
+・Bash コマンドで変更されたファイルの diff を Bash ツール結果に追加
+・`OTEL_METRICS_INCLUDE_REPOSITORY` を追加：リポジトリ属性付きの OpenTelemetry メトリクスタグ付けに対応
+・`CLAUDE_CODE_GATEWAY_MODEL_DISCOVERY_TIMEOUT_MS` を追加：LLM ゲートウェイのモデル探索タイムアウトを延長可能に
+・`CLAUDE_CODE_WORKFLOW_MAX_CONCURRENT_AGENTS`（1〜256）を追加：同時エージェント上限を引き上げられるように
+・[VSCode] エージェントのカード形式表示と読み取り専用トランスクリプトを持つエージェントマップを追加
+・[VSCode] 設定内フック管理用 Hooks ダイアログを追加
+・[VSCode] 権限ルール管理用 Permission rules ダイアログを追加
+・[Claude Code on the web] Claude が読む前にキュー内のメッセージを取り消せる機能を追加
+・[Claude Tag] GitHub インストール時の Connect all / Disconnect 前に確認ダイアログを追加
+・プロンプトキャッシュがトークン上限でレスポンスが途中で切れた際に部分的に無効化されるバグを修正
+・Claude の思考中に中断後再開する際のプロンプトキャッシュ再利用を修正
+・kitty-protocol ターミナルで F1/F2/F4 が動作しない問題と st での Delete を修正
+・バックグラウンドタスクのターミナルエスケープコードがタスクリストに届く問題を修正
+・CMYK JPEG 画像の添付に失敗する問題を修正（他の JPEG と同様に変換するよう対応）
+・Bedrock、Vertex、Foundry、ゲートウェイ環境での `/insights` の失敗を修正
+・同時ログインリフレッシュ時に組織ポリシー制限が読み込まれない問題を修正
+・クエリパラメータの順序変更時に MCP サーバーが再接続する問題を修正
+・API エラー後に `/goal` の実行が止まる問題を修正
+・長時間セッションのレスポンス性を改善（トランスクリプト更新が会話全体を再処理しなくなった）
+・`/ultrareview --post` が PR コメントを直接投稿するよう変更
+・アーティファクトデータベースの読み取りに作業フォルダの承認が不要になるよう変更
+・同期スキルの命名を Anthropic から `anthropic-skills:` 形式に変更
+・[VSCode] Focus ビューのターン表示が不正になる問題を修正
+・[Claude Code on the web] `/model default` 設定後に後続メッセージが失敗する問題を修正
+・[Claude Code on the web] ワンタイムスケジュールルーティーンが二重実行される場合がある問題を修正
+・[Claude Tag] 失敗したターン後にスレッドが沈黙する問題を修正
+・[Code Review] 結果スレッドの解決に関する注意書きを追加
+・[Code Review] レビューが不完全で終了することがある問題を修正
+🔗 https://code.claude.com/docs/en/changelog#2-1-269
