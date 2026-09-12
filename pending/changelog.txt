@@ -1,4 +1,0 @@
-🔧 **Claude Code アップデート**
-**v2.1.270**
-・Bash で read-only git コマンドが、セッションがしばらく動いた後に予期せず権限を求めるようになる問題を修正（2.1.269 のリグレッション）
-🔗 https://code.claude.com/docs/en/changelog#2-1-270
