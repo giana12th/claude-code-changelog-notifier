@@ -1,4 +1,0 @@
-📢 **Anthropic ニュース**
-**Life Sciences Verification Program（LSVP）の開始**
-Anthropicは、認定ライフサイエンス研究者向けに精緻化されたセーフガードのもとでClaude モデルへのアクセスを提供する「Life Sciences Verification Program（LSVP）」を開始した。組織は資格審査とセキュリティ基準の審査を経て、一般的なライフサイエンス業務向けの「Standard Use」または特殊なデュアルユース研究向けの「High-risk Use」のどちらかの利用許可を受ける。リアルタイムのコンテンツブロックからオフラインの使用状況モニタリングへと手法を転換することで、創薬や臨床開発などの研究を中断少なくしながら悪用防止も維持する。
-🔗 https://www.anthropic.com/news/life-sciences-verification-program
