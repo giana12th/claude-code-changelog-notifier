@@ -1,0 +1,4 @@
+📢 **Anthropic ニュース**
+**AccentureとAnthropicが組み込み型AI評価で提携**
+AnthropicはAccentureと協力し、フロンティアAIの独立評価を実施することを発表しました。AccentureのFaculty部門が「埋め込み型評価者」として、モデル評価・レッドティーミング・アライメント評価を社内に常駐する形で担当し、従業員と同等のアクセス権を持ちながら業務を行います。両社は今後5年間でそれぞれ最低10億ドルを投資する予定で、この取り組みはフロンティアAIを安全に制御するための重要な一歩となります。
+🔗 https://www.anthropic.com/news/accenture-embedded-evaluation
