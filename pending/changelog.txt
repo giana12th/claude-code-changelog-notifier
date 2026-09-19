@@ -1,5 +1,0 @@
-🔧 **Claude Code アップデート**
-**v2.1.278**
-・Claude API および Enterprise ユーザーの auto モードが、デフォルトでサーバーサイド分類器を使用するように変更
-・`/status` に "Auto mode server" 行を追加
-🔗 https://code.claude.com/docs/en/changelog#2-1-278
