@@ -1,4 +1,0 @@
-📢 **Anthropic ニュース**
-**Claude Opus 5.5 の発表**
-Anthropicが新世代フラッグシップモデル「Claude Opus 5.5」を発表した。前世代（Opus 5）比でコストを40%削減しつつ性能を大幅向上させ、入力$4・出力$20（百万トークン）の価格設定でClaude Platform・AWS・Google Cloud・Microsoft Azureにて提供開始。安全性評価では過去最高スコアを記録し、Claude Sonnet 5.5とHaiku 5.5も今後数週間以内のリリースが予定されている。
-🔗 https://www.anthropic.com/news/claude-opus-5-5
