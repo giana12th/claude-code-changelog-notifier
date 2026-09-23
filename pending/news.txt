@@ -1,0 +1,12 @@
+📢 **Anthropic ニュース**
+**ClaudeがCRISPR様リピートを持つ新規酵素システムを発見**
+Anthropicが新しいライフサイエンス研究グループを設立し、Claude AIが膨大なDNA配列データベースを検索して、新しい酵素システム「array-associated reverse transcriptases (ART)」を発見しました。このシステムはCRISPRに類似した特性を持ち、バクテリオファージで見つかった可能性のある生物学的発見です。950個のClaudeエージェントが21時間かけて2億1000万トークンを使用した結果、以前は特徴づけられていなかった酵素系の識別に成功しました。
+🔗 https://www.anthropic.com/news/claude-discovers-novel-enzyme-system
+
+**Accentureと組み込み型評価に関するパートナーシップを締結**
+AnthropicはAccentureと提携し、AIモデルの独立した評価を実施します。埋め込み型評価者はAI企業内で従業員と同等のアクセス権を持ち、モデルの開発過程を監視し、安全性への取り組みを検証します。両社は今後5年間にこの分野に各10億ドル以上を投資する予定です。
+🔗 https://www.anthropic.com/news/accenture-embedded-evaluation
+
+**ライフサイエンス認証プログラム（LSVP）を導入**
+Anthropicは生命科学の専門家向けに「Life Sciences Verification Program (LSVP)」を立ち上げました。このプログラムは、薬剤探索や臨床開発などの生物学関連業務に対して、より許容的なセーフガードを備えたMythos、Opus、Sonnetモデルへのアクセスを提供します。検証プロセスを経た組織は「Standard Use」または「High-risk Use」のいずれかのグラントを申請でき、オフライン監視によりアクセス漏洩やインサイダー脅威などのリスク軽減を実現しています。
+🔗 https://www.anthropic.com/news/life-sciences-verification-program
