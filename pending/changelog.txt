@@ -1,0 +1,89 @@
+🔧 **Claude Code アップデート**
+**v2.1.282**
+・幅の広いターミナルでClaudeの文章幅を制限する`maxProseWidth`設定を追加（テーブルとコードブロックはフル幅を維持）
+・プロジェクトの設定ファイルで無視された、またはテレメトリをオフにしたテレメトリ変数を一覧表示するstartup noticeと`/status`・`claude doctor`エントリを追加
+・`managed-mcp.json`と排他的に`claude --chrome`を実行できるようにする`allowClaudeInChromeWithManagedMcp` managed settingを追加；Chromeがブロックされたときのエラーにもこのキー名が表示されるよう変更
+・Postgresの短時間の停止（データベースフェイルオーバーなど）中に`/readyz`をready状態に保つため、Claude apps gatewayに`store.readiness_grace_seconds`を追加
+・fullscreenモードの`/feedback`下書きリストにスクロールバーを追加（マウスがリスト上にある間に表示）
+・サードパーティgateway経由で回答されたターンなど、APIが復号できないweb検索結果を含む会話履歴ですべてのリクエストが400エラーで失敗する問題を修正
+・継続または再開されたセッション（`--continue`、`--resume`）が変更された形式で以前のメッセージを再送信し、APIがClaudeの以前の推論を破棄する可能性があった問題をさらに修正
+・`/model`、`/rename`、`/artifacts`など即時スラッシュコマンドをClaudeが作業中に使用した際、以前のextended thinkingが破棄される問題を修正
+・`--tools`リストが以前の会話で提示されたビルトインツールを省略して再起動した際、継続または再開した会話が以前のextended thinkingを失う問題を修正
+・"Invalid `data` in `redacted_thinking` block" APIエラーですべてのターンが失敗するセッションを修正；thinking blocksを破棄して1回リトライするよう変更
+・サマリーリクエストが拒否された際にcompactionが失敗する問題を修正；フォールバックモデルでリトライするよう変更
+・thinkingがオフでeffortがhighより上のセッションで、セーフティ関連のモデル切り替え後に"Effort 'xhigh' isn't available with thinking turned off"エラーでターンが失敗する問題を修正
+・SDK-hostedセッション（Claude Desktopなど）で未回答のFable usage-credits promptがモデルを切り替える問題を修正；ターンが終了するよう変更、Remote Controlクライアントにmodel-switch noticeが表示されるよう変更
+・フルFable model idを指定した`/model`がusage credits promptを表示せずAPIエラーで停止する問題を修正
+・別プロセスがミッドリフレッシュで終了または強制終了された後、"another Claude Code process is refreshing it"ログインエラーで最大1分間リクエストが失敗する問題を修正
+・別のClaude Codeウィンドウがサインインを更新中に開始されたセッション（複数VS Codeウィンドウで一般的）がorganization policy fetchをリトライしない問題を修正
+・リポジトリシンボリックリンク経由でCLAUDE.mdとルールを読み込む際、`..`やmacOSの`/Network`または`/.vol`スタイルカーネルパスに到達、またはmacOSの`/home`へのルールリンクが一覧表示される問題を修正
+・設定ファイルでパターン中央に`:*`を含むBash permissionルールがスキップされる問題を修正（`--allowedTools`は尊重していた）；すべてのソースで機能するよう変更、マッチ方法についてstartup warningを表示
+・リモートセッションのworkerが再起動した際に、復元されたpermission promptで承認されたコマンドが2回実行される問題を修正
+・`disableClaudeAiConnectors`や`allowManagedPermissionRulesOnly`などのboolean lock keysで誤った値を無視するmanaged settingsを修正；ロックが適用され、startupでキー名が表示されるよう変更
+・ネストされた1つの値が無効な場合にmanaged `permissions`・`autoMode`・`worktree`・`attribution`設定が完全に無視される問題を修正；残りのブロックは引き続き適用されるよう変更
+・managed `allowManagedPermissionRulesOnly`下で、repository・user・`--add-dir`のスキル・コマンド・skills-directoryプラグインマニフェストが`allowed-tools`を通じて自分自身のツールを事前承認する問題を修正
+・Amazon BedrockとBedrock Mantleのsafeguardブロックメッセージにrequest IDが表示されない問題を修正；ブロックメッセージにmessage IDも表示されるよう変更
+・Vertex AI: Claude Codeが認識しない新しくリリースされたモデルに対してweb searchが提供されない問題を修正
+・BashとPowerShellがディスク容量不足を"Exit code 1"として隠し、大きな出力ファイルをtempに残す問題を修正
+・同じ呼び出しで他のパラメーターも無効な場合、tool input validation errorが1つの不明・欠落・誤ったパラメーターのみ表示する問題を修正；それらがすべて列挙されるよう変更
+・セッション中にターミナルのbracketed paste modeがリセットされた後、貼り付けた複数行テキストが1行ずつ送信される問題を修正
+・`SessionStart`フックのあるプロジェクトでstartup時にプロンプトのサンプルテキストが点滅して消える問題を修正
+・fullscreenモードで起動時に最初のフレームの前に空白画面が点滅する問題を修正
+・ターミナルがまだ高さがある状態で短くなった際（シェルコマンドがストリーム出力中にプロンプト行を削除するなど）、non-fullscreenレンダラーに文字化け・誤配置された行が表示される問題を修正
+・再描画された行のCJK文字や絵文字が次の行に折り返す際、diffの最終列に残る古い文字を修正
+・タブを含むプロンプトを履歴から呼び出した際、カーソルがプロンプトの末尾より前に置かれる問題を修正
+・ctrl+enterを改行として送信するターミナル（Windows Terminal 1.25以前）でsend-now hintがctrl+enterを表示する問題を修正；それらのターミナルではctrl+x ctrl+sを表示するよう変更
+・"Unknown argument: --debug"で`claude remote-control --debug`が失敗する問題を修正
+・`/install-github-app`がキャンセル後に"cancelled"と表示しつつブランチのpushとAPIキーシークレットの保存を続ける問題を修正；中止すると残りのステップが停止し、完了した内容が報告されるよう変更
+・Bedrock・Vertex他サードパーティプロバイダーで`/feedback`・`/bug`・`/share`が保存中にキャンセルしてもレポートファイルを保存し続ける問題を修正
+・設定ファイルでまだ有効または読み取れない場合にpluginアンインストールが成功を報告してオプションを削除する問題を修正；停止してファイル名を表示するよう変更
+・削除後にインストール済みプラグインのリストが読み取れない場合にpluginアンインストールがオプションとシークレットを削除する問題を修正；それらが保持され、アンインストールがその旨を表示するよう変更
+・`/skills`で`/`の後に入力した文字がスキルリストを移動させてしまう問題を修正；検索ボックスに届くよう変更
+・`/skills`検索ボックスで入力中にターミナルカーソルがスキルリストにジャンプし、キャレットが隠れてIME入力が誤った場所に配置される可能性があった問題を修正
+・スクロールバーのあるリスト（`/skills`・`/mcp`など）がfullscreenモード外で2列狭くなる問題を修正（スクロールバーが表示されることはない）
+・長いリバインドキーでagent panelフッターが2行に折り返す問題と、"Esc to collapse"ヒントがリバインドされた折りたたみキーを無視する問題を修正
+・`keybindings.json`でstop-all-agentsショートカットがアンバインドされた際に`/tasks`ダイアログフッターに`·`セパレーターが2つ表示される問題を修正
+・Claudeがバージョンに60文字を超えるラベルを付けた際にartifact publishが失敗する問題を修正；ラベルが短縮されるよう変更
+・screen-readerモード、引用リスト、非常に長いリストで、リストアイテム・引用内に直接開くコードブロックの先頭の空白行が除去される問題を修正
+・PDFページ読み取りエラーメッセージを修正：アクセント付きまたは非Latin文字を含むパスが読みやすく表示されるよう変更、"password"や"invalid"という名前のフォルダーが間違った原因を表示しなくなるよう変更
+・vim mode: `>>`が空行をインデントする問題、カウント付き`r`が行より長くテキストを変更する問題、`2J`が1行多く結合する問題、最後の行のカウント（`2dd`、`2>>`）が行をシフトまたは削除する問題を修正
+・vim mode カーソル配置を修正：`dd`・`dj`・`dG`・行全体の`p`/`P`の後は最初の非空白文字に置かれるよう変更、`yy`がカーソルを移動しなくなるよう変更、絵文字の後のEscがカーソルを絵文字内に置かなくなるよう変更
+・vim modeで`.`を使った繰り返し時に`x`・`s`・`p`・`d`・`c`へのカウントが無視される問題を修正；行全体の`p`/`P`・`o`・`O`・`J`・`>>`・`<<`が行が折り返す場合に誤った行に作用する問題を修正
+・vim modeで履歴から呼び出したまたはキューから引き戻したプロンプトのnormal modeでカーソルが末尾より後ろに残り、`x`が機能しない問題を修正
+・コンパクションされていないセッションを含む非常に大きなセッションの再開時間を改善
+・Windowsでトランスクリプトファイルを読み取れないためセッションを再開できない場合のエラーを改善（EBADF）：考えられる原因と試すべきことを表示するよう変更
+・Claude Desktopのunknown-modelエラーを改善：別のモデルへの切り替えを提案するよう変更
+・permission promptにおける特殊Unicodeのレンダリングを改善
+・`/artifacts`を改善：タイトルが1列に整列、詳細が単語途中ではなく全体で省略、PgUp/PgDn・Home/End・マウスホイール・クリックをサポートするよう変更
+・`claude-api`スキルを更新：pre-output refusal billingに"How refusals are billed" docsへのリンク追加、mid-stream refusalsは通常レートで課金、pre-output refusalsはレート制限にカウントされることを明記
+・`claude-api`スキルを更新：Managed Agentsリソースをバージョン管理ファイルとして維持するために`ant apply`を推奨するよう変更
+・テレメトリがオフの場合（`CLAUDE_CODE_AUTO_MODE_SERVER=0`でオプトアウト）でも、Anthropic API直接接続でデフォルトでサーバーサイドclassifierを使用するようauto modeを変更
+・managed settingsまたは`--settings`が`allowUnsandboxedCommands: false`を設定、またはmanaged `allowManagedDomainsOnly: true`の場合、`sandbox.excludedCommands`がプロジェクトとローカル設定エントリを無視するよう変更
+・`CLAUDE_CODE_ENABLE_TELEMETRY`・`OTEL_LOG_*`など、exportをオン・エンドポイントを設定・コンテンツをキャプチャするOpenTelemetry変数をプロジェクトとローカル設定が無視するよう変更
+・存在するが無効または読み取れないadmin policy（HKLM・`managed-settings.json`）がuser-writable HKCUとWSL `/etc/claude-code`の適用を防ぐようWindows/WSL managed settingsを変更
+・`Skill(anthropic-skills:*)`・`Skill(claude-ai:*)`のallowルールがclaude.aiから同期されたスキルのみをカバーし、そのような名前を使用するプラグインや他のスキルは含まないよう変更
+・`anthropic-skills`・`claude-ai`ネームスペースのskillフォルダー・コマンドファイル・workflowコマンドがロードされなくなるよう変更；そのような名前のプラグインは引き続きロードされるが、同期されたスキルへの名前の競合は負ける
+・`anthropic-skills`または`claude-ai`という名前で設定されたMCPサーバーがskillsやpromptsをリストしなくなるよう変更（ツールは引き続き機能）；再度リストするにはMCP設定でサーバーの名前を変更
+・`/effort`とプロンプト入力の`ultracode`ビジュアルをプレーンスタイリングに変更（リップル・ボーダーフローリッシュ・キーワードグリマーなし）、dynamic-workflowsスピナーヒントを削除
+・startup bannerのClawdマスコットの足が体の角の下に位置するよう変更
+・[VSCode] 長い返信がストリームから遅れて表示される問題を修正：パネルが毎更新時に返信全体を再パースしなくなるよう変更
+・[VSCode] 入力が十分に高くてスクロール可能な場合、ディクテーションマイクボタンがメッセージ入力のスクロールバーを覆う問題を修正
+・[VSCode] このコンピューターで開始されたRemote Controlセッションがセッションリストのwebエントリから開かない問題を修正；別の場所で実行中でない限りローカルの会話を開くよう変更
+・[VSCode] extensionホストが再起動した後、エディタータブのサインイン画面が無言でハングする問題を修正；"stopped responding" noticeも表示されるよう変更
+・[Cloud sessions] 設定 › コネクター › GitHubにClaude GitHub Appのステータスを追加：アプリがインストールされアカウントにアクセス可能かどうか、接続・インストール・再接続手順を表示
+・[Cloud sessions] リポジトリがGitHub以外のgitサーバーにホストされているcloudセッションのリポジトリメニューに"Open repository"と"Open compare page"リンクを追加
+・[Cloud sessions] すでにリポジトリがある実行中のcloudセッション（Slackから開始されたものも含む）に別のGitHub ownerのリポジトリ（フォークのupstreamなど）をアタッチする機能を追加
+・[Cloud sessions] インド時間など30分オフセットのタイムゾーンの人に、毎時ルーティンの次の実行時刻が30分ずれて表示される問題を修正
+・[Cloud sessions] 多くのcheck-inリマインダーをスケジュールした過去のセッションがあるアカウントで、Routinesページとサイドバーのスケジュールリストの読み込みを改善
+・[Claude Tag] Enterprise Gridのorg-wideインストールで、あるワークスペースのClaude Tag admin settingsに保存されたauto-joinチャンネルパターンが他のワークスペースで無視される問題を修正；Claudeが一致する新しいチャンネルに参加するよう変更
+・[Claude Tag] 1つの組織の2つのワークスペース間で共有されたEnterprise GridチャンネルにおいてClaude Tagバージョンがもう一方のワークスペースからもたらされている場合、ClaudeがそのチャンネルのメッセージにREPLYしない問題を修正
+・[Claude Tag] GitHub Enterprise Serverリポジトリでのセッションに対して、以前のClaude in Slackアプリのprogress cardを修正：リポジトリ名が表示され、機能するCreate PRボタンが提供されるよう変更
+・[Claude Tag] 使用廃止になったモデルのSlackスレッドが毎回の返信で別のモデルにフォールバックし、遅くなってフォールバック通知が毎回表示される問題を修正；スレッドが動作するモデルに移行するよう変更
+・[Claude Tag] ClaudeがSlackにアップロードするファイルがテーブルを含むキャプションを持てない問題を修正；キャプションが返信と同じフォーマットでレンダリングされるよう変更
+・[Claude Tag] Slackの「エージェントとツール」ビューでClaudeのスレッドが名前の代わりに最初のメッセージで一覧表示されることがある問題を修正；後の名前変更がリストを更新するよう変更
+・[Claude Tag] Claude Tag admin settingsのアクセスバンドルのRepositoriesタブから、切断されたGitHub organizationのgrantを削除しようとすると保存に失敗する問題を修正
+・[Claude Tag] Claudeが追加されていないGridワークスペースと共有されたチャンネルで"Couldn't check this channel just now"と常に返信する問題を修正；どのワークスペースにアプリが必要かを示す通知が表示されるよう変更
+・[Claude Tag] セッションのcloudワーカーが再起動した後、Claudeの返信フッターのコストとトークン合計が何倍も高く表示される問題を修正
+・[Claude Tag] ClaudeがSlackの返信で使用するプラン・テーブル・詳細のボーダーカードをデフォルトで幅広く表示するよう変更（以前は幅が狭い）
+・[Claude Tag] 新しく接続されたSlackワークスペースが、接続時のデフォルトモデルを維持するのではなく、現在のデフォルトモデルに従うよう変更
+🔗 https://code.claude.com/docs/en/changelog#2-1-282
