@@ -1,0 +1,14 @@
+🔧 **Claude Code アップデート**
+**v2.1.284**
+・Claude Sonnet 5.5（`claude-sonnet-5-5`）を追加。Anthropic API のデフォルト Sonnet モデルに昇格。コンテキスト 1M、$2/$10/Mtok、キャッシュ読み取り $0.20/Mtok
+・auto モードでワーキングディレクトリ外の読み取り前に表示される確認ダイアログに「Yes, but ask again next time」オプションを追加
+・`/usage` の Claude apps gateway 支出上限に金額を表示（例：`$271.40 / $500.00 spent this month`）
+・インタラクティブ端末に `/mcp reconnect all` コマンドを追加（全 MCP サーバーを一括再接続）
+・Claude apps gateway と ID プロバイダー間に証明書クライアント認証（`private_key_jwt`）を追加
+・レスポンスストリーム、エラーハンドリング、プロンプト圧縮、MCP ツールコール等のバグ修正多数
+・vim モードのテキスト編集の問題を修正
+・フルスクリーンレンダリング、タブバー表示、UI レンダリングの問題を修正
+・使用制限待機表示および各 UI コンポーネントを改善
+・プラグインマーケットプレイスの処理とバリデーションを修正
+・VSCode、Cloud セッション、Claude Tag、Code Review の各種改善
+🔗 https://code.claude.com/docs/en/changelog#2-1-284
