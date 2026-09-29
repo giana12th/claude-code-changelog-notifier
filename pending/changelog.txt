@@ -1,0 +1,29 @@
+🔧 **Claude Code アップデート**
+**v2.1.285**
+・`CLAUDE_CODE_DISABLE_WEB_FETCH` 環境変数を追加し、WebFetchツールを無効化できるようになった
+・`claude --desktop` で現在のディレクトリのClaude desktopアプリを開けるようになった（`--continue` / `--resume <id>` でセッション指定も可能）
+・`claude plugin configure <plugin>` でプラグインのオプションと未設定項目の確認・`--values-stdin` でstdinから新しい値を保存できるようになった
+・`claude plugin install --config` に `<server>.<key>=<value>` 形式を追加。バンドルされた `.mcpb` MCPサーバーの設定をインストール時に指定し、`/plugin` → Configure不要で起動できるようになった
+・`allowedProviders` managed settingを追加し、マシンが使用できるAPIプロバイダーを制限できるようになった（Anthropic API・カスタムエンドポイント・Bedrock・Mantle・Vertex AI・Foundry・Claude Platform on AWS・Cloud gateway）
+・`CLAUDE_CODE_NONSTREAMING_TIMEOUT_RETRIES` 環境変数を追加し、タイムアウトしたnon-streamingフォールバックリクエストの再送回数を制限できるようになった
+・`claude -p` と `CLAUDE_CODE_FORK_SUBAGENT=1` の組み合わせで、サブエージェントのAgent呼び出しがフォアグラウンドで実行されるよう修正
+・SSH経由のプラグイン・マーケットプレイスのインストール・更新が `GIT_SSH` や `core.sshCommand` で指定したSSHプログラムを無視していた問題を修正
+・OSがmanaged settingsファイルの読み取りを拒否した際にClaude Codeが起動を拒否していた問題を修正（警告を表示して起動するようになった）
+・クラウドセッションが会話コンパクション後の再起動時に既読・公開済みArtifactへの次の更新を拒否していた問題を修正
+・セッション途中でモデルを切り替えた際に新しいモデルが再起動まで組み込みのoutput-tokenリミットとauto-compactウィンドウを保持し続けていた問題を修正
+・リダクション済みログやトランスクリプトでURL中の `@` を含むパスワードの一部または全体が表示されていた問題を修正
+・worktreeや `/teleport` のフェッチからのSSHパスフレーズ・新規ホストプロンプトがターミナルを乗っ取っていた問題を修正（プロンプトを表示せず即時失敗するようになった）
+・SDKおよび `-p` セッションでセッション途中に追加したMCPサーバーをオフにしてもツールが利用可能なままになっていた問題を修正
+・`claude -p --permission-prompt-tool` でバックグラウンドサブエージェントの権限リクエストがauto-deniedではなくpromptツールに送られるようになった
+・バックグラウンドのBashおよびPowerShellコマンドが時間制限後（`run_in_background` の `timeout`、デフォルト30分・最大2時間）に停止するようになった
+・カスタム `ANTHROPIC_BASE_URL` を使用するセッションが対応モデル（Opus 4.7+、Sonnet 5+、Fable）の1Mコンテキストウィンドウを使用するようになった（ゲートウェイが200Kで停止する場合は `/autocompact 200k` を実行）
+・MCPサーバー名 `widgets` がクラウドセッションおよびセルフホストランナーで予約されるようになった（`widgets_` などの近い名前も読み込まれなくなるため名前変更が必要）
+・`claude mcp list` でWebSocket（`ws`）MCPサーバーがURLとヘルスステータスとともに表示されるようになった
+・`/resume` と `claude --resume` がバックグラウンドで実行中のセッションを拒否する代わりに開くようになった（`claude --resume <id> "prompt"` で渡したプロンプトも次のターンとして送信される）
+・BedrockおよびVertex AIセッションで管理者がデフォルトモデルへのアクセスを削除した場合に失敗する代わりに同ティアの古い利用可能なモデルに切り替えるようになった
+・Code Reviewのプルリクエストレビューと `/ultrareview` が `disableWorkflows` がオンでも実行されるようになった（マシン自身の管理者が設定している場合を除く）
+・[VSCode] Manage pluginsダイアログにプラグインオプションフォームを追加：インストール時に未設定オプションを確認し、ギアアイコンで後から変更可能になった
+・[VSCode] オンデマンドの診断ツールを追加し、パネル内のClaudeがファイル編集直後だけでなくいつでもProblemsパネルの現在のエラーと警告を読めるようになった
+・[Claude Tag] EnterpriseプランのStandardまたはUsage-Based Chat seatを持つCoworkユーザーにClaudeとのダイレクトメッセージが追加された（Claude Codeを含むseatは不要）
+・その他多数のバグ修正（vim mode、WebFetch、Artifact tool、sandbox、Remote Control、`/ultrareview`等）
+🔗 https://code.claude.com/docs/en/changelog#2-1-285
