@@ -1,4 +1,0 @@
-📢 **Anthropic ニュース**
-**BarclaysがClaudeを大規模展開し、業務改善と顧客体験向上を実現**
-英国大手銀行Barclaysが、AnthropicとのAIパートナーシップを大規模に拡大し、全社的なClaude活用を推進していることを発表した。すでに16,000人以上の従業員がClaude搭載の「Colleague Knowledge Assistant」を通じて2,000万人以上のUK個人顧客へのサポート向上に活用しており、Global Markets部門では1日約12万件のクライアントメールの分類・ルーティングにも利用されている。また、ソフトウェア開発の加速やレガシーシステムの近代化にも取り組んでおり、2026年末までに開発者の50%がClaude Codeを利用する計画が進んでいる。
-🔗 https://www.anthropic.com/news/barclays-scales-claude
