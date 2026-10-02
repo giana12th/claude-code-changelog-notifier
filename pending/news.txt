@@ -1,4 +1,0 @@
-📢 **Anthropic ニュース**
-**Anthropic、1億ドルを投じてエンタープライズAI人材を育成する「Claude Frontier Academy」を発表**
-Anthropicは、エンタープライズ向けAI人材不足に対応するため、2027年末までに1万人のFrontier Deployed Engineer（FDE）を育成することを目的とした1億ドル規模のプログラム「Claude Frontier Academy」を発表した。プログラムは医学教育モデルを参考に設計されており、Anthropicのエンジニアによる対面研修、模擬エンタープライズ展開演習、12週間のレジデンシーを通じて「Claude Resident Engineer」と「Claude Frontier Deployed Engineer」の2段階の認定資格が取得できる。初期コーホートにはAccenture、Bain、Deloitte、McKinsey、Morgan Stanleyなど大手企業が参加しており、サンフランシスコ、ニューヨーク、ロンドンで開催されている。
-🔗 https://www.anthropic.com/news/claude-frontier-academy
