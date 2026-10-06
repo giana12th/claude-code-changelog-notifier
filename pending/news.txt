@@ -1,4 +1,0 @@
-📢 **Anthropic ニュース**
-**サイバー検証プログラムの拡大**
-Anthropicはセキュリティ専門家向けの「サイバー検証プログラム（CVP）」を拡張し、防御作業向けの「Defense Access」、ペネトレーションテスト向けの「Red Team Access」、重要インフラのテスト向けの「Specialized Access」という3つのアクセス層を導入しました。前身のProject Glasswingでは2026年4月〜7月にパートナー企業が129,000件以上の脆弱性を特定しており、今回の拡張でより多くの防御側組織がClaudeの高度なサイバー機能を活用できるようになります。
-🔗 https://www.anthropic.com/news/cyber-verification-program
