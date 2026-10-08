@@ -1,0 +1,10 @@
+🔧 **Claude Code アップデート**
+**v2.1.295**
+・command および HTTP hooks に `onFailure: "block"` オプションを追加
+・Program Status Protocol (OSC 7501) のサポートを追加
+・`/copy` ピッカーに引用テキストを追加
+
+**v2.1.294**
+・`prompt` および `agent` hooks がインストラクションとして記述されていた場合にブロックすべきアクションを許可してしまう問題を修正
+・Stop および SubagentStop での `prompt` hooks の判定を改善し、Claude が早期停止しにくくなった
+🔗 https://code.claude.com/docs/en/changelog
