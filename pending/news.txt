@@ -1,0 +1,4 @@
+📢 **Anthropic ニュース**
+**独立評価機関への最新情報**
+AnthropicはフロンティアAIモデルの評価を行う非営利団体METR（Model Evaluation and Threat Research）の社員6名に従業員と同等のアクセス権を付与し、METRはリスク評価結果を公開する。これはAnthropicがホワイトハウスの「超知能に関するアコード（White House Accord on Super Intelligence）」に署名したことを受けた、強化された独立評価へのコミットメントの一環。AnthropicはSecureBioやAccentureとも連携しており、段階的なアクセス拡大と公開権を定めた3層モデルを導入することで、外部評価機関が機密情報を漏らさずに安全性を精査できる仕組みを整備した。
+🔗 https://www.anthropic.com/news/an-update-on-independent-evaluators
