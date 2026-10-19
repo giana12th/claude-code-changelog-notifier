@@ -1,1 +1,1 @@
-https://www.anthropic.com/research/self-replicating-ai
+https://www.anthropic.com/research/designing-efficient-quantum-circuits
