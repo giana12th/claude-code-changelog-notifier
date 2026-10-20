@@ -1,8 +1,0 @@
-🔧 **Claude Code アップデート**
-**v2.1.304**
-・mod `tool.check` のアンサーに `decider: "person"` を追加。許可ダイアログまたはホストコールバックのみが承認できるようになった。
-・`/auto-mode-setup` を追加。auto modeについて環境を教えるガイド付きセットアップで、Bedrock、Vertex、Foundry、その他のセットアップでも利用可能。
-・`/claude-api managed-agents-secure` を追加。Managed Agentsエージェントの設定をAnthropicのセキュリティガイドと比較するが、変更は行わない。
-・カスタム `ANTHROPIC_BASE_URL` 配下でtool searchをデフォルトでオンに変更。ゲートウェイからの400または422エラー時にはそれなしで再試行する。
-・Code Reviewをクイック、スタンダード（デフォルト）、ディープの3つのレビューレベルで提供するように変更。組織またはリポジトリごとに設定可能。
-🔗 https://code.claude.com/docs/en/changelog#2-1-304
