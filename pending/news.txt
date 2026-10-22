@@ -1,0 +1,8 @@
+📢 **Anthropic ニュース**
+**Agent SkillsをAgentic AI Foundationに寄贈**
+AnthropicはAIエージェントに専門的な知識とワークフローを付与するオープン標準「Agent Skills」を、Linux Foundation傘下のAgentic AI Foundation（AAIF）に寄贈すると発表した。Agent SkillsはClaude Codeの開発中に生まれ、2025年10月の公開後にChatGPT・Cursor・GitHub Copilotを含む70以上のエージェントプラットフォームが統合し、約2億8000万件のインストールに達した。仕様・ドメイン（agentskills.io）・GitHubオーガニゼーションがAAIFに移管され、Anthropic・Google・OpenAIなど複数企業のエンジニアが共同で維持管理を担う。
+🔗 https://www.anthropic.com/news/donating-agent-skills-to-the-agentic-ai-foundation
+
+**ライフサイエンス分野のゲスト研究者を公募**
+Anthropicは学術機関・非営利団体・政府研究機関の研究者を対象に、Anthropicの研究者と8〜12週間共同研究する「ゲスト研究者プログラム」の参加者を公募する。対象分野はヒト生物学・構造・計算分子生物学・薬物化学・創薬・臨床科学で、参加費は無料、成果は公開・オープンソース化される。研究者は自身のデータおよび独立した後続研究の権利を保持し、応募期間は約14日間、選定結果はその後約14日以内にメールで通知される予定。
+🔗 https://www.anthropic.com/news/open-call-guest-investigators-life-sciences
