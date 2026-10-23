@@ -1,1 +1,1 @@
-https://www.anthropic.com/research/claude-scorpion-toxin-binder-design
+https://www.anthropic.com/research/formal-verification
