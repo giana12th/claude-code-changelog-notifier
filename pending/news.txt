@@ -1,4 +1,0 @@
-📢 **Anthropic ニュース**
-**AnthropicがIPO（新規株式公開）のためにSECへS-1を提出**
-AnthropicはClass A普通株式の新規株式公開（IPO）に向け、米国証券取引委員会（SEC）にForm S-1登録届出書を提出した。株式はNasdaq Global Select Marketに「ANT」のティッカーシンボルで上場予定だが、株数と価格レンジはまだ未定で、登録が有効になるまで売買は行えない。
-🔗 https://www.anthropic.com/news/s1-sec
