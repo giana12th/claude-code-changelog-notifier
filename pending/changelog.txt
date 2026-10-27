@@ -1,0 +1,17 @@
+🔧 **Claude Code アップデート**
+**v2.1.312**
+・Claude appsゲートウェイに`oidc.user_id_claim`を追加。`sub`以外のクレーム（例：Entra IDの`oid`）でユーザーを識別できるようになった。
+・使用制限メッセージを「session limit」から「5-hour limit」に変更。
+・認識できないモデル名に対してBedrock、Vertex、Foundry、Mantleで短いシステムプロンプトを適用するよう変更。従来の完全なプロンプトを維持するには`CLAUDE_CODE_SIMPLE_SYSTEM_PROMPT=0`を設定。
+・VS Code拡張機能からサインインした後にマネージド設定が取得されない問題を修正。
+・Claude Tag Slackの返信問題といくつかのクラウドセッション問題を修正。
+・合計22件のバグ修正。
+
+**v2.1.311**
+・`self-hosted-runner`に`--hold-idle-file`と`--max-hold-min`を追加。
+・`ultrathink`をAnthropicのAPI経由でいくつかのモデルにxhigh effortで実行するよう変更。
+・Bedrock、Mantle、Vertex、Foundryが署名済みファイルからモデル設定を読み込むよう変更。無効にするには`CLAUDE_CODE_MODEL_CATALOG=off`を設定。
+・`DISABLE_COMPACT`設定を、compactionをオフにするだけに変更。
+・ProとMaxアカウントおよびオプションのみを使用する起動の起動時間を改善。
+・フリーズやstale-memoryの問題を含む合計56件のバグ修正。
+🔗 https://code.claude.com/docs/en/changelog
