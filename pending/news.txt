@@ -1,0 +1,4 @@
+📢 **Anthropic ニュース**
+**Claude による創薬開発加速の初期成果**
+Anthropicが6つの製薬パートナー（BigHat Biosciences、Bristol Myers Squibb、Divergence Labs、Enveda、Generate Biomedicines、The Column Group）および自社研究プログラムと連携し、Claude が分子設計だけでなく創薬プロセスの多くの段階で役立てられることを示す初期成果を報告した。Generate BioMedicinesではCAR T細胞療法のコンポーネント短縮化設計が実験室テストで良好な結果を示し、Divergenceでは数万件の抗体デザイン生成を支援、EnvedaではClaude が製造文書のレビューを補助した。AnthropicはMithril Medicineを買収しており、Claude が希少筋ジストロフィーの研究進展を支援している。現時点ではこれらの成果の多くは前臨床段階にある。
+🔗 https://www.anthropic.com/research/early-progress-drug-development
