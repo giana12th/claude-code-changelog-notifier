@@ -1,0 +1,4 @@
+📢 **Anthropic ニュース**
+**AI for Scienceプログラムが財団・研究機関へ拡大**
+AnthropicのAI for Scienceプログラムが新たに20のパートナーと連携し、無料のClaude利用枠の提供対象を拡大した。Alfred P. Sloan Foundation、Simons Foundation、Schmidt Sciences等の助成機関が研究者へクレジットを配布するほか、Francis Crick InstituteやEMBL、Imperial College Londonなどの研究機関も参加する。2025年5月開始の同プログラムは生物学・医学・物理学・気候科学など幅広い分野の数百プロジェクトを支援しており、今後さらに世界的に拡大する予定。
+🔗 https://www.anthropic.com/news/ai-for-science-expands-foundations-research-institutions
