@@ -1,0 +1,22 @@
+🔧 **Claude Code アップデート**
+**v2.1.314**（2026年10月30日）
+
+**追加**
+・`permissions.blockWritesOutsideWorkingDirectories`：全パーミッションモードでWrite・Edit・NotebookEditがワーキングディレクトリ外のパスを拒否
+・Claude appsゲートウェイのアップストリームにオプション`groups`リストを追加：指定IdPグループの開発者のみ送信される（フェイルオーバー時も同様）
+・Claude apps Bedrockアップストリームに`guardrail_trace`を追加：どのAmazon Bedrockガードレールが発火したかをログ記録（マッチしたテキストは除く）
+・VS CodeとClaude DesktopのCodeタブにidle compaction追加：200K+トークンの会話がアイドル時に自動要約され、プロンプトキャッシュ期限切れ後の次回メッセージに活用される
+・[クラウドセッション] スケジュールタスクページに「完了済みを含める」ボタンを追加
+・[Claude Tag] Slack接続済みエンタープライズ組織の管理設定（BundlesとChannelsタブ）にClaude Tag APIドキュメントへのリンクを追加
+
+**変更**
+・`/claude-api`スキル更新：DatadogのAPIトレースが`dd-llmobs-enabled: true`ヘッダーを送信するよう変更、macOSの`xattr`手順を削除
+・バンドルdatavizスキル更新：y軸ラベルを10,000未満で完全表示、ドーナツ・円グラフのリクエストにはランク付きバーまたはセグメント化バーで回答するよう変更
+・Claudeのファイルツールが組織のサーバー管理設定のローカルコピー編集前に確認を求めるよう変更
+・フラグされたリクエストが拒否で終わる代わりに別モデルでリトライするよう変更（`ANTHROPIC_DEFAULT_OPUS_MODEL`・`availableModels`・`deniedModels`で古いOpusのみ残る場合）
+・`FORCE_HYPERLINK=false`（`no`・`off`も同様）がハイパーリンクをオフにするよう修正（従来は逆動作だった）
+・macOS：Claudeが実行するほとんどのコマンドで`git grep`がCロケールを使用するよう変更（macOS regexライブラリのメモリリーク回避）
+・[クラウドセッション] セットアップスクリプトがエラーで終了してもクラウドセッションが起動するよう変更（従来は起動失敗）
+
+**16件の改善・81件のバグ修正**
+🔗 https://code.claude.com/docs/en/changelog#2-1-314
