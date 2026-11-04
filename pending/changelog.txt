@@ -1,0 +1,6 @@
+🔧 **Claude Code アップデート**
+**v2.1.318**
+・追加: セッションモッドをオンにするようClaude Codeが確認を求めた際の回答が記録されるようになった。`mantle` ゲートウェイのアップストリームに `assume_role` オプションを追加。モッドの `$.model.fork` に `effort` オプションを追加。`claude auth status` と `claude -p` の出力にclaude.aiサインインの有効期限を追加。
+・変更: IDEターミナルで起動した際にClaude CodeがIDEエクステンションをインストール・更新しなくなった。バックグラウンドサブエージェントは3分後にシェルコマンドをバックグラウンドに移動させる。`deniedMcpServers` のURLエントリが、一致するAnthropicが提供するサーバーとコネクタもブロックするようになった。
+・改善・修正: 共有ホームディレクトリの設定安全性、MCPツールのエラーメッセージ、不正なツールコール後の `--continue` を含む15件の改善と47件のバグ修正。
+🔗 https://code.claude.com/docs/en/changelog#2-1-318
