@@ -1,0 +1,4 @@
+📢 **Anthropic ニュース**
+**Claude Fable 5.2 と Claude Mythos 5.2 の発表**
+Anthropicは2026年11月9日に、Claude Fable 5.2とClaude Mythos 5.2を発表しました。両モデルは同じ基盤モデルで、コーディング、推論、ビジョンなどが向上し、出力速度はClaude Fable 5.1比で最大30%速くなっています。Fableは一般ユーザーが利用でき、Mythosはサイバーセキュリティや生命科学の認証プログラムを通じて提供されます。
+🔗 https://www.anthropic.com/claude-fable-and-mythos-5-2
