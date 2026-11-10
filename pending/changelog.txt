@@ -1,4 +1,0 @@
-🔧 **Claude Code アップデート**
-**v2.1.322**
-・Vertex の global・us・eu リージョンで fast mode に対応。Vertex が fast mode を拒否した場合は標準速度にフォールバックする。
-🔗 https://code.claude.com/docs/en/changelog#2-1-322
