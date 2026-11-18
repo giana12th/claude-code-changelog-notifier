@@ -1,1 +1,1 @@
-https://www.anthropic.com/research/building-strong-safety-evaluations
+https://www.anthropic.com/research/coordinated-vulnerability-disclosure-timelines
