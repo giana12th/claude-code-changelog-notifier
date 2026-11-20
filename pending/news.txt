@@ -1,4 +1,0 @@
-📢 **Anthropic ニュース**
-**AnthropicのIPO完了——新規株式公開および第三者割当増資の決済が完結**
-AnthropicはIPO（新規株式公開）および同時並行の第三者割当増資が完了したと発表した。IPOではClass A普通株式11億2,700万株を1株83ドルで売り出し、Anthropicへの受取額は約916億ドル。AMD・Broadcom・Google・Micron・Microsoft・NVIDIA・TSMCを対象とする非公開のClass N株式増資（約260億ドル）も同時に完了し、合計調達額は約1,195億ドルに達した。Class A株式は2026年11月19日よりNasdaq（ティッカー：ANT）に上場している。
-🔗 https://www.anthropic.com/news/ipo-close
